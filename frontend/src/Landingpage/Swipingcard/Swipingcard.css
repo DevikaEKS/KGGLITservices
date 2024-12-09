@@ -1,0 +1,16 @@
+.crdbdy{
+    background-color: #291571;
+    color: #fff !important;
+    text-align: justify;
+}
+.crmsolutions{
+    background-color: #cee6ff;
+    color: #291571;
+}
+
+@media (max-width:427px){
+    .procard{
+        width: 250px;
+    }
+}
+

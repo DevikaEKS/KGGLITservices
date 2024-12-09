@@ -1,0 +1,111 @@
+.navbox{
+box-shadow: 1px 1px 10px 1px #bab9fc !important;
+background-color: rgba(255, 255, 255, 0.4);
+}
+
+.navtext {
+    color: #291571 !important;
+    font-size: 20px !important;
+    font-family: 'Proxima Nova', sans-serif !important;
+    font-weight: 500;
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+    overflow: hidden; /* Ensures pseudo-element does not overflow */
+}
+ 
+.navdrop:hover{
+    color: #291571 !important;
+    font-size: 20px !important;
+    font-family: 'Proxima Nova', sans-serif !important;
+    font-weight: 500;
+}
+.navtext1 {
+    color: #291571 !important;
+    font-size: 20px !important;
+    font-family: 'Proxima Nova', sans-serif !important;
+    font-weight: 500;
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+    overflow: hidden; /* Ensures pseudo-element does not overflow */
+}
+
+.navtext1:hover{
+    background-color: white;
+}
+ 
+.contactbutton{
+  background-color: #291571 !important;
+  color: #fff !important;
+  font-size: 24px !important;
+}
+
+.navtext1:disabled {
+  color: #6c757d; /* Gray color for disabled item */
+  pointer-events: none; /* Prevents click actions */
+  opacity: 0.6; /* Makes it semi-transparent */
+}
+.logsiz{
+  height: 6%;
+  width: 90px;
+}
+
+@media (max-width: 769px) {
+  .logsiz {
+      width: 70px !important;
+      height: 60px;
+      margin-left: 5% !important;
+  }
+  .navtext:hover::after {
+    transform: scaleX(0) !important ; /* Removes the underline effect on hover */
+    transition: none !important; /* Removes the transition effect */
+  }
+
+}
+
+
+@media (min-width: 426px) {
+  .logsiz {
+      margin-left: 10%;
+     
+  }
+ 
+}
+  
+.navtext1:active{
+  background-color: #fff !important;
+}
+.navtext {
+  position: relative;
+  text-decoration: none;
+  color: black; 
+  padding-bottom: 5px; 
+}
+
+.navtext:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px; 
+  background-image: linear-gradient(to right,#D10D14,#6B060A); 
+  transform: scaleX(0.8);
+  transition: transform 0.3s ease; 
+}
+
+.navtext::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px; 
+  background-image: linear-gradient(to right,#D10D14,#6B060A);
+  border-radius: 5px; 
+  transform: scaleX(0);
+  transition: transform 0.3s ease; 
+}
+
+  
+  
+  
+
+ 

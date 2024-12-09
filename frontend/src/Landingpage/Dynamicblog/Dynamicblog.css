@@ -1,0 +1,6 @@
+
+.ql-editor img {
+    height: 40px;
+    object-fit: cover; /* Maintain aspect ratio, crop if needed */
+    width: auto; /* Maintain original width */
+  }

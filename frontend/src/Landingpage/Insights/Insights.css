@@ -1,0 +1,36 @@
+
+.colourcard{
+    background-image: linear-gradient(45deg,#291571,#4e28d7);
+    color: #fff;
+}
+
+.insightspart{
+    margin: 50px;
+}
+
+.readbtn{
+    color: #fff;
+    background-color: transparent;
+   border: none;
+}
+.readbtn:hover{
+    text-decoration: underline;
+}
+
+.title-ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  
+@media (max-width:768px){
+    .insightspart{
+        margin: 0px;
+    }   
+}
+
+
+  

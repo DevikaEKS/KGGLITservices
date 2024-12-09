@@ -1,0 +1,35 @@
+.imsp{
+  max-width:600px
+}
+.inpbrd{
+    border: 1px solid #291750;
+    color: #291750;
+}
+.blogpartcontent{
+    color: #291750 !important;
+}
+.subbtnclr{
+    background-color: #291750;
+    color: #fff;
+    border: 0px;
+    padding: 5px;
+    margin:10px
+}
+
+.shadowcard{
+    box-shadow: 1px 1px 10px 2px #d8d6df;
+    border: 0px !important;
+}
+.blogpartcontent{
+    color: #291750 !important;
+}
+@media(max-width:426px){
+    .imsp{
+        max-width: 300px !important;
+    }
+}
+@media (min-width:427px) and (max-width:768px){
+    .imsp{
+        max-width: 400px !important;
+    }   
+}

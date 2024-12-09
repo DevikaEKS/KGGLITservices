@@ -1,0 +1,37 @@
+.bgforteam {
+   background-image: url("../Asset/Build.png");
+    /* padding: 60px 0; */
+    background-size: cover;
+}
+.tcard {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.curvespart{
+    border-top-left-radius: 50px !important;
+ 
+}
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    height: 200px; /* Adjust height as needed */
+}
+.featurescard{
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+.titleteam{
+   border-bottom: 2px solid rgb(142, 12, 212);
+   text-align: center;
+}
+.listpart{
+    color: #ffccfa;
+}
+@media (max-width: 767.98px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}

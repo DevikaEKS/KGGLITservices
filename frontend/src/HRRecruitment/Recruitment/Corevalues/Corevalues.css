@@ -1,0 +1,23 @@
+
+.bgcore{
+    background-image: url("../../Asset/elements.png");  
+}
+.corepart{
+    background-color: #F1F6FA;
+    border-radius: 10px;
+    padding: 10px;  
+}
+.valuetext{
+    color: #2A014A;
+    font-weight: 600;
+}
+.coretexts{
+    color:#33225E;
+}
+
+@media (max-width:769px){
+    .corepics1{
+        max-height: 300px;
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,24 @@
+.smallim{
+    height: 300px;
+}
+.dmtxt{
+    font-size: 48px;
+    font-weight: 600;
+    color: #291571;
+}
+.entiredm{
+    color: #291571;
+}
+
+@media (max-width:427px){
+    .smallim{
+        height: 200px;
+    }
+    .dmtxt{
+        font-size: 30px;        
+    }
+    .adoptpara{
+        text-align: justify;
+    }
+    
+}

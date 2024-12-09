@@ -1,0 +1,26 @@
+.dmpara{
+    font-size: 30px;
+}
+.dmheadertext{
+    font-size: 64px;
+}
+
+@media (max-width:426px){
+    .dmpara{
+        font-size: 18px;
+    }
+    .dmheadertext{
+        font-size: 28px;
+        padding: 10px;
+    }   
+}
+
+
+@media (min-width:427px) and (max-width:769px){
+    .dmpara{
+        font-size: 20px;
+    }
+    .dmheadertext{
+        font-size: 28px;
+    }   
+}

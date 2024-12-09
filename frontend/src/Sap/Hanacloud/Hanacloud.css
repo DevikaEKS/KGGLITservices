@@ -1,0 +1,48 @@
+.hanabg{
+  background-image: linear-gradient(#fff 20%,#4892e4 78%);
+}
+
+.digitaltext{
+  font-size: 25px;
+  color: #322179;
+}
+.digitaltext:hover {
+  transform: scale(1.05); /* Slightly enlarge the text for a zoom effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
+.cloudhead{
+    color: #322179;
+    font-size: 28px;
+    font-weight: 700;
+}
+.valuehead{
+  color: #322179;
+}
+
+@media (max-width:426px){
+  .cloudimg{
+    max-height: 200px;
+    max-width: 200px;
+  }
+  .cloudhead,.valuehead{
+    font-size: 20px;
+    color: #322179;
+  } 
+  .hanabg{
+    background-image: linear-gradient(#fff 40%,#4892e4 88%);
+  }
+}
+
+@media (min-width:427px)and(max-width:768px){
+  .cloudimg{
+    min-height: 250px;
+    min-width: 250px;
+  }
+}
+@media (min-width:769px){
+    .cloudimg{
+        min-height: 310px;
+        min-width: 310px;
+      }
+     
+}

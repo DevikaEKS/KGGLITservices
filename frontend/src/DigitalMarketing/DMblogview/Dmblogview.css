@@ -1,0 +1,19 @@
+.blogpartcontent{
+    color: #291571 !important;
+    text-align: justify;
+}
+.imdm{
+    height: 200px;
+    max-width: 400px;   
+}
+
+@media (min-width:769px){
+    .imdm{
+        height: 250px; 
+    }
+}
+
+.custom-color1{
+    color: #291571 !important;   
+}
+

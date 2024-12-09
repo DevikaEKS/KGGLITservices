@@ -1,0 +1,39 @@
+
+.bgdiscover {
+ background: linear-gradient(#09091b,#291571);
+  height: 100%;
+}
+
+
+.curved-background {
+  border-radius: 15px; 
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.hrtext{
+  color: white;
+  font-size: 30px;
+}
+.paradiscover{
+  font-size: 24px;
+}
+.prvctxt{
+  font-size: 12px;
+}
+
+@media (max-width:769px){
+  .bgdiscover {
+    background-image: linear-gradient(#09091b,#291571) ;
+  } 
+  .prvctxt{
+    text-align: justify;
+    font-size: 12px;
+  } 
+}
+
+
+
+

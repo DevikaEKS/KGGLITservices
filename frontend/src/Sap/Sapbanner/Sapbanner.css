@@ -1,0 +1,60 @@
+.sapbannerpart{
+    background-image: url("../Asset/Frame\ 31.png");
+    background-size: cover;
+    color: #fff;
+    background-repeat: no-repeat;
+}
+.linkhover{
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.linkhover:hover{
+    color: #FBF100;
+} 
+.sapbannertext h1{
+    font-size: 62px;
+    font-family: 'Proxima Nova', sans-serif;  
+    font-weight: 600 !important;
+}
+
+@media (max-width:426px){
+    .sapbannertext h1{
+        font-size: 30px;
+    }
+    .fnt{
+        font-size: 18px;
+        padding: 10px 0px;
+        font-weight: 0px;
+    }
+    .linkhover{
+        font-size: 20px;
+    }
+}
+
+.fnt{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+/* Highlight active link with yellow color */
+.active-link {
+    color: #ffff00 !important;
+    font-weight: 400;
+  }
+  
+  /* Add hover effect for links */
+.linkhover {
+    color: #fff;
+    text-decoration: none;
+}
+  
+.linkhover:hover {
+    color: #ffff00; 
+}
+
+
+  
+
+
+

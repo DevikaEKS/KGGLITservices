@@ -1,0 +1,18 @@
+.form-control2{
+    border-bottom: 1px solid #291571 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.shadebtn{
+    background-image: linear-gradient(to right,#291571,#4E28D7);
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    padding:10px 20px;
+}
+
+.bookcard{
+    box-shadow: 1px 1px 10px 1px #cdcccc;
+}

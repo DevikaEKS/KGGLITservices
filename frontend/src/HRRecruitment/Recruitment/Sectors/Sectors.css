@@ -1,0 +1,63 @@
+
+
+ .sectorsbg{
+    background-image: url("../../Asset/Sectors.png");
+    /* padding: 2rem 0; */
+}
+
+  
+  .sectorheading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .parasectors {
+    font-size: 1.2rem;
+    /* margin-bottom: 2rem; */
+  }
+  
+  .card-container {
+    display: flex;
+    flex: 0 0 18%; 
+    justify-content: center;
+    /* margin: 10px; */
+  }
+  
+  .shadowsector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 1rem; */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    border: 0 !important;
+    box-shadow: 1px 1px 5px 1px rgb(199, 164, 205);
+  }
+  .shadowsector:hover{
+    transform: scale(1.1);
+  }
+ .imlogos{
+  height: 80px;
+  width: 80px;
+ }
+  
+.parasectors{
+    color: #33225E;
+}
+.sectorheading{
+    font-size: 48px;
+    font-weight: 600;
+    color: #2A014A;
+}
+  
+
+.crd{
+  padding: 0;
+}
+
+@media (max-width:425px){
+  .crd{
+    margin:0px 60px !important;
+  }
+}

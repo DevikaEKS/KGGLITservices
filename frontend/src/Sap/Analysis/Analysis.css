@@ -1,0 +1,31 @@
+.bganalyse{
+    background-image: url("../Asset/backgroundsap.png");
+}
+.analysepart{
+    color: #291571;
+    font-family: 'Proxima Nova', sans-serif;
+}
+.paraanalyse{
+    font-size: 20px;
+}
+.analysehead{
+    font-weight: 600;
+    font-size: 48px;
+}
+.txtanalyse{
+    font-size: 32px;
+}
+
+@media (max-width:769px){
+    .analysehead{
+        font-size: 40px;
+    }
+    .paraanalyse{
+        font-size: 20px;
+        text-align: justify;
+        padding: 0px 10px;
+    }
+    .txtanalyse{
+        font-size: 24px;
+    }   
+}

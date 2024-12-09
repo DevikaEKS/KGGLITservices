@@ -1,0 +1,28 @@
+.sapsupportpart{
+    color: #291571;
+    font-family: 'Proxima Nova', sans-serif;   
+}
+.sapsupportpart h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.sapsupportpara{
+    font-size: 28px;
+    text-align: center;
+}
+
+.sapsupportcontent{
+    font-size: 18px;
+    text-align: justify; 
+}
+.hanaheading{
+    font-size: 58px;
+}
+
+.servicesappart{
+    margin: 0px 150px !important;
+}
+
+
+

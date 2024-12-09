@@ -1,0 +1,64 @@
+
+
+.serviceheading {
+    color: #291571; 
+    font-size: 65px !important;
+    font-weight: 700 !important;
+    position: relative;
+    margin-bottom: 30px;
+   
+}
+/* .serviceheading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 5px;
+    background: linear-gradient(90deg, #291571 0%, #4E28D7 100%);
+    border-radius: 2px 0 0 0;
+} */
+
+.saptext{
+    font-size: 48px;
+    background-image: linear-gradient(#291571, #4E28D7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 600;
+}
+
+.servetext{
+    font-size: 70px;
+    background-image: linear-gradient(#D10D14, #6B060A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.servicesbg{
+    background-image: url("../../Asset/servicesbg.png");
+}
+
+
+@media (max-width:426px){
+    .serviceheading{
+        font-size: 48px !important;
+        padding-left: 0px;
+        text-align: center;
+       
+    }
+    .servetext{
+        font-size: 40px !important;
+    }
+ .saptext{
+        font-size: 30px;
+        text-align: center;
+
+    }
+    .prt{
+        font-size: 20px;
+    }  
+}
+
+

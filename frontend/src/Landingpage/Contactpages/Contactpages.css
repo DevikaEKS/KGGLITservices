@@ -1,0 +1,123 @@
+.startpara {
+  font-size: 50px;
+}
+.fc1 {
+  border: 1px solid #291571 !important;
+  background-color: transparent !important;
+}
+
+.privacytext {
+  font-size: 14px;
+  color: #291571;
+}
+
+.endpara {
+  font-size: 58px;
+  font-weight: 600;
+}
+
+.conversationpara {
+  font-size: 24px;
+}
+.form-control1 {
+  border: 1px solid #291571 !important;
+}
+.fr {
+  border: 0px 0px 0px 1px solid #291571 !important;
+}
+
+.contacttext {
+  color: #291571;
+}
+.connectpara1 {
+  font-size: 20px;
+}
+.contactheading {
+  font-size: 48px;
+  font-weight: 600 !important;
+  font-family: "Proxima Nova", sans-serif;
+}
+
+.contactbtn {
+  background-image: linear-gradient(to left, #4e28d7, #291571);
+  color: white;
+}
+
+.position-relative .dropdown-icon {
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* To make sure the icon doesn't interfere with the select element */
+  color: #291571; /* Adjust the color as per your design */
+}
+
+@media (min-width: 768px) {
+  .contactpart {
+    padding: 0px 70px !important;
+  }
+}
+
+.card-container {
+  perspective: 1000px; /* Allows the 3D effect */
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-container:hover .card-inner {
+  transform: rotateY(180deg); /* Flips the card */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back side when not flipped */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  background-color: #ffffff;
+}
+
+.card-back {
+  background-color: #007bff;
+  color: white;
+  transform: rotateY(180deg); /* Positions the back side behind the front */
+}
+
+.bgform {
+  background-color: #291571;
+}
+@media (max-width: 768px) {
+  .startpara {
+    font-size: 30px;
+  }
+
+  .endpara {
+    font-size: 34px;
+  }
+
+  .contactheading {
+    font-size: 35px;
+    font-weight: 600 !important;
+    font-family: "Proxima Nova", sans-serif;
+  }
+}

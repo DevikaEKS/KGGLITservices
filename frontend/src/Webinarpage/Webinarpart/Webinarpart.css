@@ -1,0 +1,52 @@
+.regbtn{
+    background-color: #2F2BEB;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+}
+.webinarpart{
+    font-family: 'Proxima Nova', sans-serif;
+}
+.bgcrd{
+    background-color: #2BC8EB !important;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);    
+}
+.webcards{
+    background-color: #040334;
+    color: #fff;
+}
+.webpart{
+        font-family: 'Proxima Nova', sans-serif;
+        font-weight: 700 !important;
+        color: #09093C;
+      }
+
+.keytakeawaycards{
+    background-image: url("../Asset/keytakeaways.png");
+    color: #fff;
+    height: 350px;
+    /* width: 350px; */
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+.imgmam{
+    max-height: 350px;
+}
+
+@media (max-width: 768px) {
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .iconimg {
+      max-width: 50%; 
+      margin-bottom: 10px; 
+    }
+    .imgmam{
+        max-height: 300px;
+    }
+  }
+  

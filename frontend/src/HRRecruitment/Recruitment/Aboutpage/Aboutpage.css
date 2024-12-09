@@ -1,0 +1,52 @@
+.bgaboutpage{
+    background-image: url("../../Asset/2964669-01\ 1.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
+.aboutpara{
+    color: #33225E;
+    font-size: 20px;
+}
+
+.txtresume{
+    text-align: justify;
+}
+.aboutheading{
+    font-size: 40px;
+    color: #2A014A;
+    font-weight: 600;
+}
+@media (max-width:425px){
+   .weim img{
+    height: 250px;
+   }
+   .aboutheading{
+    font-size: 30px;
+    color: #2A014A;
+    font-weight: 600;
+    text-align: start;
+}
+}
+
+@media (min-width:426px){
+    .weim img{
+     height: 400px;
+    }
+    .aboutheading{
+     font-size: 30px;
+     color: #2A014A;
+     font-weight: 600;
+     text-align: start;
+ }
+ }
+
+
+ .hrim{
+    filter: drop-shadow(2px 4px 8px rgba(93, 91, 91, 0.821));
+ }
+
+
+
+  
+

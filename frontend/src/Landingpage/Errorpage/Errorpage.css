@@ -1,0 +1,32 @@
+
+.bgerrorpart {
+    background-image: linear-gradient(#291571, #4E28D7);
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn-light {
+    background-color: #f1faee; 
+    color: #1d3557; 
+  }
+
+  .error-code {
+    font-size: 10rem;
+    background-image: url('../Asset/9804423.jpg'); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+  }
+  
+  .oops-heading {
+    background-image: url('../Asset/oopstext.jpg'); 
+    background-size: cover; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-size: 58px; 
+    padding: 20px;
+    text-align: center;
+  }
+  

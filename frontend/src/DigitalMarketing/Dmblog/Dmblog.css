@@ -1,0 +1,26 @@
+.blogheading {
+    position: relative; 
+    display: inline-block; 
+    font-size: 48px; 
+    font-family: 'Proxima Nova', sans-serif;
+    color: #291571;
+    font-weight: 600;
+  }
+  
+  .colourcard{
+    background-image: linear-gradient(to top,#291571,#4e28d7);
+    color: #fff;
+  }
+  
+  .insightspart{
+    margin: 50px;
+  }
+  
+  @media (max-width:768px){
+    .insightspart{
+        margin: 0px;
+    }   
+  }
+  
+  
+  

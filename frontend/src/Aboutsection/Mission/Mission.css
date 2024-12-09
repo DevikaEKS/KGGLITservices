@@ -1,0 +1,103 @@
+.credhead,
+.abhead {
+  white-space: nowrap;
+}
+
+.credhead {
+  font-size: 24px;
+  background-image: linear-gradient(#ED1C24, #871015);
+  -webkit-background-clip: text;
+  font-weight: 600;
+  position: relative;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+.typewriter-cursor {
+  display: none;
+}
+
+.heading-with-icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.vhead {
+  font-size: 72px;
+  background-image: linear-gradient(#291571, #4E28D7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  padding-left: 100px;
+}
+
+.vhead1 {
+  font-size: 72px;
+  background-image: linear-gradient(#291571, #4E28D7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  padding-right: 80px;
+}
+
+.vtext {
+  width: 300px !important;
+  background-color: #291571;
+}
+
+.section-para {
+  font-size: 16px;
+  color: #291571;
+  line-height: 1.6;
+  max-width: 450px;
+  text-align: justify !important;
+}
+
+.section-image {
+  max-width: 200px;
+  border-radius: 8px;
+}
+
+.decorative-icon {
+  width: 30px;
+  height: auto;
+}
+
+.missionborder-text {
+  -webkit-text-stroke: 1px #98969e !important;
+  /* Purple border color */
+  color: transparent;
+  /* Hide the text color */
+  padding: 0.5rem;
+  /* Add some padding to adjust the size */
+  background-color: transparent;
+  /* Ensure background is transparent */
+}
+
+
+@media (max-width: 769px) {
+  .heading-with-icon {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .section-image {
+    max-width: 150px;
+    margin: 0 auto 20px;
+  }
+
+  .section-para {
+    text-align: center;
+  }
+
+
+}
+
+.mvimg {
+  height: 350px;
+}

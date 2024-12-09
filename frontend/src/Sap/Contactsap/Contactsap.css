@@ -1,0 +1,23 @@
+.textcontact,label{
+    color: #291571;
+}
+.contactheadertext{
+    color: #291571;
+    font-weight: 700;
+}
+.sapcontentpara{
+    font-size: 24px; 
+}
+.sapcontacthead{
+    font-weight: 700;
+    font-size: 48px;
+}
+.frmcontacts{
+    background-image: linear-gradient(#09091B,#291571);
+}
+
+@media (max-width:768px){
+    .sapcontacthead{
+        font-size: 28px;
+    }    
+}

@@ -1,0 +1,26 @@
+.bgclrfooter {
+  background: linear-gradient(to bottom, white 50%, #291571 50%);
+  
+}
+.contactmain{
+  color: #291571 !important;
+}
+.hoverani{
+    font-size: 30px;
+    padding: 10px;
+    color: #ED1C24;
+  }
+.contactpara{
+  color: #291571;
+}
+.hoverani:hover{
+
+    color: #291571;
+      }
+    
+@media (max-width:768px){
+    .footer-wrapper{
+       display: flex;
+       
+}
+}

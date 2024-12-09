@@ -1,0 +1,60 @@
+.textclr{
+    color: #291571;
+}
+
+.abouttext{
+    font-size: 19px;
+    /* line-height: 1.8; */
+    text-align: justify;
+    color: #291571;
+    font-family: 'Proxima Nova', sans-serif !important;
+}
+
+.knowmore{
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(#291573, #4A26CD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.aboutheading {
+    color: #291571 !important; 
+    font-size: 48px !important;
+    font-weight: 400 !important;
+    font-family: 'Proxima Nova', sans-serif;
+    position: relative;
+  
+    margin-bottom: 30px;
+}
+
+
+.aboutimg{
+    height: 350px;
+    width: 350px;
+}
+
+@media (max-width:768px){
+    .aboutpart{
+        margin: 0px;
+    } 
+    .aboutimg{
+        height: 300px;
+        width: 300px; 
+    }
+    .aboutheading {
+        font-size: 40px !important;
+        text-align: center !important;
+        padding-left: 0px;
+    }
+    .abouttext{
+        font-size: 16px;
+    }
+    .knowmore{
+        font-size: 16px; 
+    }
+}

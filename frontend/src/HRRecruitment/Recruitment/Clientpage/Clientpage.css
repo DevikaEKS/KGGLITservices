@@ -1,0 +1,26 @@
+.clientsbg{
+    background-image: url("../../Asset/pciolet.png");
+}
+.cardpart{
+    border:1px solid #CCCCCC;
+    border-radius: 30px !important;
+    box-shadow:  inset -2px 2px 6px #e2c4df, /* Inner shadow */
+    2px 2px 7px #e7b4f0;
+    max-width: 400px; 
+}
+
+.clienttext{
+    color: #2A014A; 
+    font-size: 46px;
+    font-weight: 700;  
+}
+
+.cardshadow{
+    background: linear-gradient(to right,white,transparent,transparent);
+    border-radius: 8px;
+    color: #33225E;  
+    font-size: 20px;
+    margin: 0px; 
+}
+
+

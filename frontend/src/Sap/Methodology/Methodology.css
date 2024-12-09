@@ -1,0 +1,44 @@
+.methodtxt{
+    color: #291571;
+    font-size: 68px;
+    font-family: 'Proxima Nova', sans-serif;  
+}
+
+
+.method-mobile {
+    display: none;
+  }
+  
+
+@media (max-width: 767px) {
+    .method-desktop {
+      display: none; 
+    }
+    .method-mobile {
+      display: block;
+    }
+  }
+  
+
+@media (min-width: 768px) {
+    .method-desktop {
+      display: block;
+    }
+    .method-mobile {
+      display: none;
+    }
+  }
+  
+
+@media (max-width:769px){
+    .methodim{
+        max-height: 300px;
+        max-width: 200px;
+    }
+    .methodtxt{
+        font-size: 48px !important;
+    }
+    .methodtext{
+        text-align: center;
+    }
+}

@@ -1,0 +1,63 @@
+.userimg1 {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 1px 2px 3px #635986;
+}
+.crdpart {
+  box-shadow: 1px 2px 15px rgb(221, 220, 220);
+}
+
+.clienttext {
+  color: #291571;
+  font-size: 58px;
+}
+.userimg2{
+  height: 70px !important;
+  width:140px !important;
+}
+.quotesimg {
+  height: auto;
+  width: 80px;
+}
+.testimonialheader {
+  color: #291571 !important;
+  font-size: 35px !important;
+  font-weight: 700;
+}
+.paratestimonial {
+  text-align: justify;
+  color: #291571;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.roundbox {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+}
+.userimg2 {
+  width: 120px;
+  height: auto;
+}
+
+@media (max-width: 426px) {
+  .clienttext {
+    color: #291571;
+    font-size: 30px;
+  }
+  .testimonialheader {
+    color: #291571;
+    font-size: 28px !important;
+    font-weight: 700;
+  }
+  .paratestimonial {
+    color: #291571;
+  }
+  .quotesimg {
+    height: auto;
+    width: 50px;
+  }
+}

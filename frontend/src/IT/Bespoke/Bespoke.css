@@ -1,0 +1,66 @@
+.bespoketextpart{
+    text-align: justify;
+}
+.benefitscard{
+    background-color: #291571 !important;
+    color: #fff !important;
+}
+.benefitscard1{
+    background-color: #291571 !important;
+    color: #fff !important;
+}
+.benefitscard2{
+    background-color: #291571 ;
+    color: #fff ;
+}
+.bespokepara{
+    font-size: 20px;
+}
+.enterprisehead{
+    font-size: 32px;
+    font-weight: 600;
+}
+.enterprisehead1{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.bespoketextpart p{
+    font-size: 20px;
+    padding: 10px 0px;
+}
+.whitecrd{
+    box-shadow: 1px 1px 1px 3px rgb(238, 237, 237);
+    color: #291571 !important;
+}
+.shbtn{
+    box-shadow:1px 1px 1px 1px #9a83ec;
+    padding: 10px;
+}
+
+@media (max-width:426px){
+    .mobileappim{
+        height: 300px;
+        }
+        .benefitscard{
+           background-color: #fff;
+           color: #291571;
+        }
+        .benefitscard1{
+            background-color: #291571;
+            color: #fff;
+         }
+         
+}
+
+@media (min-width:427px)and (max-width:769px){
+    .mobileappim{
+        height: 400px;
+        } 
+        .benefitscards2{
+            background-color: #fff;
+            color: #291571;
+        }
+}
+
+

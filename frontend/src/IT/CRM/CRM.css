@@ -1,0 +1,48 @@
+.crim1{
+    height: 350px;
+   
+}
+.crmpart{
+    color: #291571;
+}
+.crmhead{
+    font-size: 40px;
+    font-weight: 700;
+}
+.crmcard{
+    box-shadow: 1px 1px 1px 1px rgb(233, 231, 231);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease; 
+    color: #291571;
+}
+
+.itcrd{
+    box-shadow: 1px 1px 1px 1px #bed8ff;
+    color: #291571 !important;
+    font-size: 24px;
+}
+
+
+
+
+
+
+.crmcard1{
+    background-color: #291571;
+    color: white;
+}
+
+
+@media (max-width:426px){
+    .itcrd{
+        font-size: 18px;
+    }
+    .crim{
+        height: 250px;
+    }
+    .crim1{
+        height: 250px;
+    }
+}

@@ -1,0 +1,52 @@
+.lmspart{
+    color: #291571;
+}
+.lmsunord{
+    font-size: 20px; 
+    font-weight: 800;
+}
+.lmshead{
+    font-size: 40px;
+    font-weight: 600;
+}
+.lmspara{
+    font-size: 24px;
+    padding: 10px 100px;
+    text-align: center;
+}
+
+.lmslist{
+    font-size: 20px;
+}
+
+.brdside{
+    border-right: 4px solid #7FD0FD;
+}
+.lmsfeatures{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+
+.lmsim1{
+    height: 300px;
+}
+
+@media (max-width:426px){
+    .lmspara{
+        padding: 0px 0px;
+        font-size: 20px;
+    }
+    .lmsfeatures{
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .brdside{
+        border-right: none;
+    }
+    .lmsim1{
+        height: 200px;
+    }
+   
+}
+

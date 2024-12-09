@@ -1,0 +1,73 @@
+.greenfieldbg{
+    background-image: linear-gradient(#fff ,#4892e4);
+}
+.greenfieldtext{
+    color: #291571 !important;
+    background-color: #f7f6fb !important;
+}
+
+.greenhead{
+    font-size: 24px;
+    font-weight: 600 !important;
+}
+
+.greenfieldtext p{
+    font-size: 18px;
+}
+
+.bluesemi{
+    background-color: ;
+}
+
+
+
+/* hover animation */
+.greenfieldtext {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Center the text horizontally */
+    color: white; /* Ensure text color contrasts with background */
+    z-index: 1; /* Ensure text is above the circle */
+  }
+  
+  .greenfieldtext p,.greenfieldtext h4 {
+    position: relative;
+    z-index: 2; /* Ensure text stays on top of the circle */
+    transition: opacity 0.3s ease; /* Smooth text transition */
+  }
+  
+  .greenfieldtext::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background-color: #c68fe6; /* Initial color */
+    border-radius: 50%;
+    transform: translate(-50%, 50%) scale(0);
+    transition: transform 1s ease, background-color 0.3s ease; /* Smooth transitions */
+  }
+  
+  .greenfieldtext:hover::before {
+    transform: translate(-50%, 50%) scale(1);
+    background-color: #ffdfd6; 
+  }
+  
+  .greenfieldtext:hover p {
+    opacity: 1; 
+  }
+
+  .greenfieldtext.change-content {
+    background-color: #d4edda; 
+  }
+  
+  .greenfieldtext.change-content p {
+    opacity: 1;
+  }
+  
+  .greenfieldtext.new-content p {
+    opacity: 0;
+  }
+  
