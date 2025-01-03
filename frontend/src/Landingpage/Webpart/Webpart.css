@@ -1,0 +1,24 @@
+
+.fixed-webinarpart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  .eventlogo{
+    height: 200px;
+  }
+@media (max-width:426px){
+    .eventlogo{
+        height: 150px; 
+      }
+      .fixed-webinarpart {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        z-index: 1000;
+      }   
+}
+
+
+  

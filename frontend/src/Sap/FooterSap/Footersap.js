@@ -37,6 +37,7 @@ function Footersap() {
           <Link to="/contact" className="nav-link">
             <p>Contact Us</p>
           </Link>
+          <hr className="d-sm-block d-lg-none custom-hr" />
         </div>
         <div className="col-sm-4 col-lg-2">
           <h4>
@@ -54,6 +55,7 @@ function Footersap() {
           <Link to="/hr-consultancy" className="nav-link">
             <p>HR Consultancy</p>
           </Link>
+          <hr className="d-sm-block d-lg-none custom-hr" />
         </div>
         <div className="col-sm-4 col-lg-2">
           <h4>
@@ -107,7 +109,7 @@ function Footersap() {
           </a>
           <div className="d-flex flex-column justify-content-center">
             <div>
-              <p className="mt-3">Follow Us on</p>
+              <p className="mt-3">Follow us on</p>
             </div>
             <div className="pb-4">
               <a href="https://www.facebook.com/profile.php?id=61557350633724">

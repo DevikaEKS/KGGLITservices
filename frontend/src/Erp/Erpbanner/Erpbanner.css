@@ -1,0 +1,90 @@
+.businessheading{
+    font-weight: 600;
+    color: #291571;
+    font-size: 55px;
+}
+.bookbtn{
+    background-color: #ED1C24;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.streamtxt{
+    color: #291571;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.bgmb{
+    background-image: url("../Asset/mbbannerpart.png");
+    background-size: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom: 10px;
+}
+
+
+.lapbanner{
+    background-image: url("../Asset/bannerpart.png");
+    background-size: cover;
+    height: 100vh !important;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 50px; 
+}
+.imglogo{
+    height: 110px;
+}
+.bluelogo{
+    height: 100px;
+}
+.erpbannerlaptop{
+    max-height: 600px;
+}
+@media (min-width:426px) and (max-width:768px){
+    .erpbannerlaptop{
+        max-height: 420px;
+    } 
+    .businessheading{
+        font-weight: 600;
+        color: #291571;
+        font-size: 28px;
+    }    
+}
+@media (min-width:1025){
+    .erpbannerlaptop{
+        max-height: 680px;
+    }    
+}
+@media (max-width:768px){
+    .businessheading{
+        font-weight: 600;
+        color: #291571;
+        font-size: 35px;
+    }    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  

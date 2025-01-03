@@ -1,0 +1,32 @@
+.table-sales th{
+    background-color: #291571 !important;
+    color: #fff !important;
+    padding: 10px 2px;
+    border: 1px solid #291571;
+}
+.webinarleads{
+    color: #291571;
+    font-weight: 600;
+}
+.table-sales td{
+    padding: 10px 2px;
+    border: 1px solid rgb(123, 121, 121);
+    font-family: 'Proxima Nova', sans-serif !important;
+}
+
+.active {
+    color: #ED1C24; /* Set the active link color to red */
+    font-weight: bold; /* Optional: Make it bold */
+    text-decoration: none; /* Optional: Add underline for clarity */
+}
+
+.leadsdownloadbtn{
+    background-color: #291571;
+    color: #fff;
+    border: 0px;
+    border-radius: 5px;
+}
+.logouttxt{
+    color: #ED1C24;
+    text-decoration: none;
+}

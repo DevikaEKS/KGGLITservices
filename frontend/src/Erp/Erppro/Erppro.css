@@ -1,0 +1,59 @@
+.Propart .card{
+border: 1px solid #291571;
+color: #291571 !important;
+background-color: #F4FEFF;
+border-radius: 20px;
+}
+.revolutiontxt{
+  font-size: 18px;
+  text-align: center;
+}
+.Propart p{
+color: #291571;  
+}
+
+.paraerp{
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(40deg, #291571, #07021b); /* Two-color gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.procards {
+    width: 100%;
+    height: 100px;
+    font-size: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.procards:hover{
+    transform: scale(1.05); /* Slightly enlarges the card */
+  background-color: #F4FEFF; 
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+  border: 2px ridge #291571;
+  font-weight: 600 !important;
+}
+
+.procards p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+  
+
+@media (max-width:768px){
+  .revolutiontxt{
+    font-size: 18px;
+    text-align: justify;
+  }
+}

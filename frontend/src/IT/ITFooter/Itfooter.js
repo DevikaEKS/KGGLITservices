@@ -10,24 +10,28 @@ function Itfooter() {
   useEffect(() => {
     window.scrollTo(0, 0); 
   }, []);
+  const date = new Date();
+const year = date.getFullYear();
+
   return (
     <div className='container-fluid pt-5 footerbg px-5 text-start'>  
       <div className='row'>
         <div className='col-sm-4 col-lg-2'>
           <h4>Quick Links</h4>
-          <Sclink to="Homepart" className="nav-link"><p>Home</p></Sclink>
+          <Link to="/" className="nav-link"><p>Home</p></Link>
           <Link to="/aboutus" className="nav-link"><p>About Us</p></Link>  
-          <Sclink to="ourservices" className="nav-link"><p>Services</p></Sclink>
+          <Link to="/" className="nav-link"><p>Services</p></Link>
           <Link to="/blog" className="nav-link"><p>Blog</p></Link>
           <Link to="/contact" className="nav-link"><p>Contact Us</p></Link>
+          <hr className="d-sm-block d-lg-none custom-hr" />
         </div>
-        <div className='col-sm-4 col-lg-2'>
+        <div className='col-sm-4 col-lg-3'>
           <h4>Services</h4>
           <Link to="/sap-services" className="nav-link"><p>SAP Services</p></Link>
           <Sclink to="ITbanner" className="nav-link"><p>IT Services</p></Sclink>
           <Link to="/digital-marketing-services" className="nav-link"><p> Digital Marketing Services</p></Link>
-          
           <Link to="/hr-consultancy" className="nav-link"><p>HR Consultancy</p></Link>
+          <hr className="d-sm-block d-lg-none custom-hr" />
         </div>
         <div className='col-sm-4 col-lg-2'>
   <h4>Our Branches</h4>
@@ -62,7 +66,7 @@ function Itfooter() {
           <a href="https://www.kgisl.com/"><img src={kgisllogo} title='KGiSL' alt="KGISL Logo" className="kgisllogo" height={50} width={150} /></a> 
           <div className='d-flex flex-column justify-content-center'>
           <div>
-          <p className='mt-3'>Follow Us on</p>                                                                                    
+          <p className='mt-3'>Follow us on</p>                                                                                    
           </div>
           <div className='pb-4'>
           <a href="https://www.facebook.com/profile.php?id=61557350633724"><FontAwesomeIcon icon={faFacebook} className="text-white mx-2"></FontAwesomeIcon></a>
@@ -73,6 +77,7 @@ function Itfooter() {
           </div>
           </div>
         </div>
+        <p className='text-center py-1'>Copyright © {year}  KGGL. All Right Reserved.</p>
       </div>
     </div>
   );

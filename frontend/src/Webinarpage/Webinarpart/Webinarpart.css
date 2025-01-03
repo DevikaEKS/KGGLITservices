@@ -20,7 +20,9 @@
         font-weight: 700 !important;
         color: #09093C;
       }
-
+.listedtext{
+font-size: 20px;
+}
 .keytakeawaycards{
     background-image: url("../Asset/keytakeaways.png");
     color: #fff;
@@ -31,6 +33,14 @@
 }
 .imgmam{
     max-height: 350px;
+}
+.keytakeawaytext{
+font-size: 50px;
+text-align: start;
+width: 30%; 
+}
+.webtxt{
+    font-size: 35px;
 }
 
 @media (max-width: 768px) {
@@ -48,5 +58,18 @@
     .imgmam{
         max-height: 300px;
     }
+    .keytakeawaytext{
+        font-size: 32px;
+        text-align: center;
+        width: 0%; 
+        }
+        .keytakeawaytexts{
+            font-size: 30px;
+            text-align: center;
+            width: 0%; 
+            }
+            .webtxt{
+                font-size: 24px;
+            }
   }
   

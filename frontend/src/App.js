@@ -68,6 +68,23 @@ import Webinarbanner from "./Webinarpage/Webinarbanner/Webinarbanner";
 import Webinarcontact from "./Webinarpage/Webinarcontact/Webinarcontact";
 import Webinarpart from "./Webinarpage/Webinarpart/Webinarpart";
 import Webinarfooter from "./Webinarpage/Webinarfooter/Webinarfooter";
+import Salesdatacategory from "./Salesdata/Salesdatacategory";
+import Salesmenu from "./Salesdata/Salesmenu/Salesmenu";
+import Webpart from "./Landingpage/Webpart/Webpart";
+import Erpmenubar from "./Erp/Erpmenubar/Erpmenubar";
+import Erpfooter from "./Erp/Erpfooter/Erpfooter";
+import Verticals from "./Erp/Verticals/Verticals";
+import Erpbanner from "./Erp/Erpbanner/Erpbanner";
+import Erprequirements from "./Erp/Erprequirements/Erprequirements";
+import Softwarepart from "./Erp/Softwarepart/Softwarepart";
+import Businesserp from "./Erp/Businesserp/Businesserp";
+import Erppro from "./Erp/Erppro/Erppro";
+import Featureserp from "./Erp/Featureserp/Featureserp";
+import Additionalfeatures from "./Erp/Additionalfeatures/Additionalfeatures";
+import Benefitsoferp from "./Erp/Benefitsoferp/Benefitsoferp";
+import Erpblock from "./Erp/Erpblock/Erpblock";
+import Erpcontact from "./Erp/Erpcontact/Erpcontact";
+import { RedirectToExternal } from "./Landingpage/RedirectToExternal/RedirectToExternal";
 
 function App() {
   return (
@@ -87,7 +104,7 @@ function App() {
               <Contactpages />,
               <Footercard />,
               <Footer />,
-              <Autopopup />,
+              <Autopopup />
             ]}
           />
           <Route
@@ -115,7 +132,7 @@ function App() {
               <Discover />,
               <Footercard />,
               <Hrfooter />,
-              <Autopopup />,
+              <Autopopup />
             ]}
           />
           <Route
@@ -130,7 +147,7 @@ function App() {
               <Methodology />,
               <Greenfield />,
               <Newimplement />,
-              <Contactsap />,
+              <Contactsap />
             ]}
           />
           <Route
@@ -156,7 +173,7 @@ function App() {
               <Dmcontact />,
               <Footercard />,
               <Footerdm />,
-              <Autopopup />,
+              <Autopopup />
             ]}
           />
           <Route path="/digital-marketing-blog/:id" element={[<Menubar />,<Dmblogview />,<Footercard />,<Footerblog/>]} />
@@ -174,7 +191,7 @@ function App() {
               <Techstack />,
               <Contactformit />,
               <Footercard />,
-              <Itfooter />,
+              <Itfooter />
             ]}
           />
           <Route
@@ -185,15 +202,18 @@ function App() {
               <Techstack />,
               <Contactformit />,
               <Footercard />,
-              <Itfooter />,
+              <Itfooter />
             ]}/>
-          <Route path="/blog-login" element={<Loginpage />} />
+          <Route path="/genius-login" element={<Loginpage />} />
           <Route path="/dynamic-blog/:id" element={<Dynamicblog />} />
           <Route path="/blog-update" element={<BlogUpdate />} />
           <Route path="/blogeditor/:id" element={<EditorBlog/>}/>
           <Route path="/updateblog/:id/:userid" element={<Blogupdation/>}/>
           <Route path="*" element={<Errorpage />} />
-          <Route path="/custom-erp-software-solution" element={[<Webinarbanner/>,<Webinarpart/>,<Webinarcontact/>,<Footercard />,<Webinarfooter/>]}/>
+          <Route path="/event" element={[<Webinarbanner/>,<Webinarpart/>,<Webinarcontact/>,<Footercard />,<Webinarfooter/>]}/>
+          <Route path="/sales/:userid" element={[<Salesmenu/>,<Salesdatacategory/>]}/>
+          <Route path="/custom-erp-software-solution" element={[<Erpmenubar/>,<Erpbanner/>,<Erprequirements/>,<Verticals/>,<Erppro/>,<Featureserp/>,<Additionalfeatures/>,<Benefitsoferp/>,<Businesserp/>,<Erpcontact/>,<Footercard />,<Erpfooter/>]}/>
+          <Route path="/erp" element={<RedirectToExternal/>}/>
         </Routes>
       </BrowserRouter>
     </div>
@@ -201,3 +221,4 @@ function App() {
 }
 
 export default App;
+   

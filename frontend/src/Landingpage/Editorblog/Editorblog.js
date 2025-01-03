@@ -12,7 +12,7 @@
 //     setBlogs([]);
 //     if (selectedCategory === "All") {
 //       axios
-//         .get(`https://www.kggeniuslabs.com:5000/blog?t=${Date.now()}`)
+//         .get(`https://www.kggeniuslabs.com:5000/blogs?t=${Date.now()}`)
 //         .then((res) => {
 //           setBlogs(res.data);
 //         })
@@ -20,7 +20,7 @@
 //     } else if (categoryId) {
 //       axios
 //         .get(
-//           `https://www.kggeniuslabs.com:5000/blog/category/${categoryId}?t=${Date.now()}`
+//           `https://www.kggeniuslabs.com:5000/blogs/category/${categoryId}?t=${Date.now()}`
 //         )
 //         .then((res) => {
 //           setBlogs(res.data);
@@ -137,7 +137,7 @@ function Blogviewed() {
     setBlogs([]);
     if (selectedCategory === "All") {
       axios
-        .get(`https://www.kggeniuslabs.com:5000/content/blog?t=${Date.now()}`)
+        .get(`https://www.kggeniuslabs.com:5000/content/blogs?t=${Date.now()}`)
         .then((res) => {
           // console.log(res.data);
 
@@ -147,7 +147,7 @@ function Blogviewed() {
     } else if (categoryId) {
       axios
         .get(
-          `https://www.kggeniuslabs.com:5000/blog/content/category/${categoryId}?t=${Date.now()}`
+          `https://www.kggeniuslabs.com:5000/blogs/content/category/${categoryId}?t=${Date.now()}`
         )
         .then((res) => {
           console.log(res.data);
@@ -198,7 +198,7 @@ function Blogviewed() {
 
   const deleteBlog = (blogId) => {
     axios
-      .delete(`https://www.kggeniuslabs.com:5000/blog/delete/${blogId}`)
+      .delete(`https://www.kggeniuslabs.com:5000/blogs/delete/${blogId}`)
       .then((res) => {
         if (res.data.message === "Blog deleted successfully") {
           alert("Blog deleted successfully!");
@@ -215,7 +215,7 @@ function Blogviewed() {
 
   const togglePublish = (blogId, currentStatus) => {
     axios
-      .put(`https://www.kggeniuslabs.com:5000/blog/togglePublish/${blogId}`)
+      .put(`https://www.kggeniuslabs.com:5000/blogs/togglePublish/${blogId}`)
       .then((res) => {
         if (res.data.success) {
           setBlogs((prevBlogs) =>

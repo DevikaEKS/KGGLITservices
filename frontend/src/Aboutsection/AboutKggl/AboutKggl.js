@@ -2,9 +2,18 @@
 
 import React from 'react';
 import "./AboutKggl.css";
-
+import { Helmet } from 'react-helmet';
 function AboutKggl() {
   return (
+    <>
+    <Helmet>
+        <title>About KG Genius Labs | Innovating IT Solutions & Empowering Careers
+</title>
+        <meta name="description" content="Discover KG Genius Labs' mission to innovate IT solutions and empower careers. Learn about our expertise in SAP S/4HANA, IT consultancy, digital marketing, and customized ERP/CRM and LMS development, driving success for businesses and individuals.." />
+        <meta name="keywords" content="About KG Genius Labs, IT Solutions Innovation, SAP S/4HANA Experts, Digital Marketing Specialists, IT Consultancy Services, Customized ERP/CRM and LMS Development" />
+        <link rel="canonical" href="https://www.kggeniuslabs.com/aboutus" />
+      </Helmet>
+
     <div className='container-fluid d-flex flex-column align-items-center justify-content-center whygl' id='aboutpart'>
       {/* Adding small circles to the background */}
       <div className="circle"></div>
@@ -33,6 +42,7 @@ impact, scalable solutions that drive business efficiency and foster growth.
         </div>
       </div>
     </div>
+    </>
   );
 }
 

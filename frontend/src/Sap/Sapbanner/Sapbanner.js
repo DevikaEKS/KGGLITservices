@@ -15,7 +15,7 @@ import Contactsap from "../Contactsap/Contactsap";
 import Analysis from "../Analysis/Analysis";
 import Footersap from "../FooterSap/Footersap";
 import Sapblog from "../Sapblog/Sapblog";
-
+import { Helmet } from 'react-helmet';
 function Sapbanner() {
   const [selectedSection, setSelectedSection] = useState("s4hana");
   useEffect(() => {
@@ -36,6 +36,15 @@ function Sapbanner() {
 
   return (
     <>
+    <Helmet>
+        <title>Expert SAP Services by KG Genius Labs | SAP S/4HANA & ERP Solutions
+</title>
+        <meta name="description" content="Transform your business with KG Genius Labs' SAP consultancy services. Specializing in SAP S/4HANA implementation, migration, and private cloud solutions. Contact us today." />
+        <meta name="keywords" content="SAP Services, SAP S/4HANA, Customized ERP Solutions, SAP Consultancy, SAP Implementation, SAP Migration, Private Cloud Solutions, Best SAP S/4HANA migration services, Custom SAP S/4HANA solutions for businesses in Coimbatore
+" />
+        <link rel="canonical" href="https://www.kggeniuslabs.com/sap-services" />
+      </Helmet>
+
       <div>
         <div className="container-fluid sapbannerpart" id="sapbanner">
           {/* Banner Part */}

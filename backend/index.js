@@ -5,7 +5,8 @@ import mysql from "mysql2";
 import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
-
+import nodemailer from "nodemailer";
+import axios from "axios";
 const app = express();
 dotenv.config();
 
@@ -18,22 +19,31 @@ app.use(
 );
 app.use("/uploads", express.static("uploads"));
 
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "johnpauljayakumar08@gmail.com",
+    pass: "yguu jxha dlwv abdk",
+  },
+});
+
+
 /*                                       DB Conf                                    */
 const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
-  waitForConnection: true,
+  waitForConnection:true,
 });
 
-db.getConnection((err, connection) => {
+db.getConnection((err,connection) => {
   if (err) {
     console.log("error", err);
     return;
   } else {
     console.log("db connected");
-    connection.release();
+   connection.release();
   }
 });
 
@@ -74,6 +84,370 @@ const upload = multer({
   },
 });
 
+// app.post("/webinar-form", (req, res) => {
+//   const {
+//     username,
+//     email,
+//     phoneNumber,
+//     companyName,
+//     designation,
+//     date,
+//     slot,
+//     state,
+//     city,
+//   } = req.body;
+//   console.log(date+1)
+//   const query = `
+//     INSERT INTO webinar (
+//       name, 
+//       email, 
+//       phoneNumber, 
+//       companyName, 
+//       designation, 
+//       date,
+//       slot,
+//       state, 
+//       city
+//     ) VALUES (?, ?, ?, ?, ?, ?, ?,?,?)`;
+
+//   // Execute the query
+//   db.query(
+//     query,
+//     [username, email, phoneNumber, companyName, designation,date,slot, state, city],
+//     (err, result) => {
+//       if (err) {
+//         console.error("Error inserting data:", err);
+//         return res.status(500).json({ message: "Database error" });
+//       } else {
+        
+//         const mailOptions = {
+//           from: "sivaranji5670@gmail.com",
+//           to: email,
+//           subject: 'Thank You for Registering for Our Webinar!',
+//     text: `Dear ${username}, Thank you for registering for the upcoming webinar hosted by KG Genius Labs! We are excited to have you join us.`,
+//     html: `
+//       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; background-color: #001040; border-radius: 10px; color: white;">
+//         <h2 style="text-align: center; color: white;">Your Registration is Successful</h2>
+        
+//         <p>Hello ${username},</p>
+//         <p>We are confident that it will provide valuable insights into Customised ERP. We look forward to your participation and engaging with you during the session.</p>
+//         <p>Here are the details for the webinar:</p>
+//         <p><strong>Date:</strong> 14TH December</p>
+//         <p><strong>Time:</strong> 7pm to 8pm</p>
+      
+//         <div style="padding: 15px; border: 1px solid #4CAF50; border-radius: 8px; margin-top: 10px; background-color: #001040;">
+//           <p style="margin: 0;">
+//             <a href="https://chat.whatsapp.com/JmT4HDEp0FDByUJUGPImWH" style="color: #4CAF50; font-weight: bold;">Join Our Group</a>
+//           </p>
+//         </div>
+      
+//         <p style="margin-top: 20px; color: white;">Updates regarding the upcoming webinar will be shared in the WhatsApp group.</p>
+        
+//         <p style="color: white;">If you have any questions or need assistance, feel free to reach out to our support team at 
+//           <a href="mailto:info@kggeniuslabs.com" style="color: #4CAF50;">info@kggeniuslabs.com</a>.
+//         </p>
+      
+//         <div style="border-top: 1px solid #4CAF50; margin-top: 20px; padding-top: 10px;">
+//           <p style="font-size: 12px; color: white;">Best Regards,<br>KG Genius Labs Team</p>
+//         </div>
+//       </div>
+//     `
+//         };
+
+//         transporter.sendMail(mailOptions, (error)=>{
+//           if(error){
+//             console.error(error);
+//           }
+//           else{
+//             res.json({ message: "Form submitted successfully" });
+//           }
+//         })
+//       }
+//     }
+//   );
+// });
+// app.post("/webinar-form", (req, res) => {
+//   const {
+//     username,
+//     email,
+//     phoneNumber,
+//     companyName,
+//     designation,
+//     date,
+//     slot,
+//     state,
+//     city,
+//   } = req.body;
+
+//   // Adjust the date to handle time zone issues
+//   let adjustedDate = new Date(date);
+//   adjustedDate.setMinutes(adjustedDate.getMinutes() - adjustedDate.getTimezoneOffset());
+
+//   const query = `
+//     INSERT INTO webinar (
+//       name, 
+//       email, 
+//       phoneNumber, 
+//       companyName, 
+//       designation, 
+//       date,
+//       slot,
+//       state, 
+//       city
+//     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+//   db.query(
+//     query,
+//     [username, email, phoneNumber, companyName, designation, adjustedDate, slot, state, city],
+//     (err, result) => {
+//       if (err) {
+//         console.error("Error inserting data:", err);
+//         return res.status(500).json({ message: "Database error" });
+//       } else {
+//         const mailOptions = {
+//           from: "sivaranji5670@gmail.com",
+//           to: email,
+//           subject: 'Thank You for Registering for Our Webinar!',
+//           text: `Dear ${username}, Thank you for registering for the upcoming webinar hosted by KG Genius Labs! We are excited to have you join us.`,
+//           html: `
+//             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; background-color: #001040; border-radius: 10px; color: white;">
+//               <h2 style="text-align: center; color: white;">Your Registration is Successful</h2>
+//               <p>Hello ${username},</p>
+//               <p>We are confident that it will provide valuable insights into Customised ERP. We look forward to your participation and engaging with you during the session.</p>
+//               <p>Here are the details for the webinar:</p>
+//               <p><strong>Date:</strong> 14TH December</p>
+//               <p><strong>Time:</strong> 7pm to 8pm</p>
+//               <div style="padding: 15px; border: 1px solid #4CAF50; border-radius: 8px; margin-top: 10px; background-color: #001040;">
+//                 <p style="margin: 0;">
+//                   <a href="https://chat.whatsapp.com/JmT4HDEp0FDByUJUGPImWH" style="color: #4CAF50; font-weight: bold;">Join Our Group</a>
+//                 </p>
+//               </div>
+//               <p style="margin-top: 20px; color: white;">Updates regarding the upcoming webinar will be shared in the WhatsApp group.</p>
+//               <p style="color: white;">If you have any questions or need assistance, feel free to reach out to our support team at 
+//                 <a href="mailto:info@kggeniuslabs.com" style="color: #4CAF50;">info@kggeniuslabs.com</a>.
+//               </p>
+//               <div style="border-top: 1px solid #4CAF50; margin-top: 20px; padding-top: 10px;">
+//                 <p style="font-size: 12px; color: white;">Best Regards,<br>KG Genius Labs Team</p>
+//               </div>
+//             </div>
+//           `
+//         };
+
+//         transporter.sendMail(mailOptions, (error) => {
+//           if (error) {
+//             console.error(error);
+//           } else {
+//             res.json({ message: "Form submitted successfully" });
+//           }
+//         });
+//       }
+//     }
+//   );
+// });
+async function createLead(state, event) {
+  const leadData = {
+      name: event.text,  // assuming the user's name is in event.text
+      email: state.email,
+      phone: state.phone
+  };
+
+  try {
+      const response = await axios.post('http://192.168.253.187:8000/api/method/erpnext.create_lead', leadData);
+      return state;
+  } catch (error) {
+      console.error('Error creating lead:', error);
+      return state;
+  }
+}
+// app.post("/webinar-form", (req, res) => {
+//   const {
+//     username,
+//     email,
+//     phoneNumber,
+//     companyName,
+//     designation,
+//     date,
+//     slot,
+//     state,
+//     city,
+//   } = req.body;
+//   async function createLead(state, event) {
+//     console.log("enter")
+//     const leadData = {
+//       lead_name: username,  // Assuming 'lead_name' maps to the full name in ERPNext
+//       company_name: companyName,  // Assuming 'company_name' is the organization name
+//       email_id: email,  // Assuming 'email_id' is the email field
+//       mobile_no: phoneNumber,  // Assuming 'mobile_no' is the mobile number field
+//       phone: phoneNumber,  // Assuming 'phone' is an alternate phone field
+//       source: "www.kggeniuslabs.com"  // Assuming 'source' maps to lead source
+//     };
+  
+//     try {
+//         const response = await axios.post('http://192.168.253.187:8000/api/method/erpnext.create_lead', leadData);
+//         return state;
+//     } catch (error) {
+//         console.error('Error creating lead:', error);
+//         return state;
+//     }
+//   }
+//   // Adjust the date to handle time zone issues
+//   let adjustedDate = new Date(date);
+//   adjustedDate.setMinutes(adjustedDate.getMinutes() - adjustedDate.getTimezoneOffset());
+  
+//   // Format the adjusted date for display
+//   const formattedDate = adjustedDate.toLocaleDateString("en-US", {
+//     year: "numeric",
+//     month: "long",
+//     day: "numeric",
+//   });
+
+//   const query = `
+//     INSERT INTO webinar (
+//       name, 
+//       email, 
+//       phoneNumber, 
+//       companyName, 
+//       designation, 
+//       date,
+//       slot,
+//       state, 
+//       city
+//     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+//   db.query(
+//     query,
+//     [username, email, phoneNumber, companyName, designation, adjustedDate, slot, state, city],
+//     (err, result) => {
+//       if (err) {
+//         console.error("Error inserting data:", err);
+//         return res.status(500).json({ message: "Database error" });
+//       } else {
+//         createLead
+//         // const mailOptions = {
+//         //   // from: "sivaranji5670@gmail.com",
+//         //   from: "johnpauljayakumar08@gmail.com",
+//         //   to: email,
+//         //   subject: 'Thank You for Registering for Our Webinar!',
+//         //   text: `Dear ${username}, Thank you for registering for the upcoming webinar hosted by KG Genius Labs! We are excited to have you join us.`,
+//         //   html: `
+//         //     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; background-color: #001040; border-radius: 10px; color: white;">
+//         //       <h2 style="text-align: center; color: white;">Your Registration is Successful</h2>
+//         //       <p>Hello ${username},</p>
+//         //       <p>We are confident that it will provide valuable insights into Customised ERP. We look forward to your participation and engaging with you during the session.</p>
+//         //       <p>Here are the details for the webinar:</p>
+//         //       <p><strong>Date:</strong> ${formattedDate}</p>
+//         //       <p><strong>Slot:</strong> ${slot}</p>
+//         //       <div style="padding: 15px; border: 1px solid #4CAF50; border-radius: 8px; margin-top: 10px; background-color: #001040;">
+//         //         <p style="margin: 0;">
+//         //           <a href="https://chat.whatsapp.com/JmT4HDEp0FDByUJUGPImWH" style="color: #4CAF50; font-weight: bold;">Join Our Group</a>
+//         //         </p>
+//         //       </div>
+//         //       <p style="margin-top: 20px; color: white;">Updates regarding the upcoming webinar will be shared in the WhatsApp group.</p>
+//         //       <p style="color: white;">If you have any questions or need assistance, feel free to reach out to our support team at 
+//         //         <a href="mailto:info@kggeniuslabs.com" style="color: #4CAF50;">info@kggeniuslabs.com</a>.
+//         //       </p>
+//         //       <div style="border-top: 1px solid #4CAF50; margin-top: 20px; padding-top: 10px;">
+//         //         <p style="font-size: 12px; color: white;">Best Regards,<br>KG Genius Labs Team</p>
+//         //       </div>
+//         //     </div>
+//         //   `
+//         // };
+
+//         // transporter.sendMail(mailOptions, (error) => {
+//         //   if (error) {
+//         //     console.error(error);
+//         //   } else {
+//         //     res.json({ message: "Form submitted successfully" });
+//         //   }
+//         // });
+//         res.json({ message: "Form submitted successfully" });
+//       }
+//     }
+//   );
+// });
+
+app.post("/webinar-form", async (req, res) => {
+  const {
+    username,
+    email,
+    phoneNumber,
+    companyName,
+    designation,
+    date,
+    slot,
+    state,
+    city,
+  } = req.body;
+
+  // Function to create lead in ERPNext
+  async function createLead() {
+    const leadData = {
+      lead_name: username, // Assuming 'lead_name' maps to the full name in ERPNext
+      company_name: companyName, // Assuming 'company_name' is the organization name
+      email_id: email, // Assuming 'email_id' is the email field
+      mobile_no: phoneNumber, // Assuming 'mobile_no' is the mobile number field
+      phone: phoneNumber, // Assuming 'phone' is an alternate phone field
+      source: "www.kggeniuslabs.com" // Assuming 'source' maps to lead source
+    };
+
+    try {
+      const response = await axios.post(
+        'http://192.168.253.187:8000/api/resource/Lead',
+        leadData,
+        {
+          headers: {
+            Authorization: `Token your_api_key:your_api_secret`, // Replace with your actual API key and secret
+            'Content-Type': 'application/json' // Ensure JSON format
+          }
+        }
+      );
+      console.log('Lead created successfully:', response.data);
+    } catch (error) {
+      console.error('Error creating lead:', error.response ? error.response.data : error.message);
+    }
+  }
+
+  try {
+    // Adjust the date to handle time zone issues
+    let adjustedDate = new Date(date);
+    adjustedDate.setMinutes(adjustedDate.getMinutes() - adjustedDate.getTimezoneOffset());
+
+    // Insert data into the database
+    const query = `
+      INSERT INTO webinar (
+        name, 
+        email, 
+        phoneNumber, 
+        companyName, 
+        designation, 
+        date,
+        slot,
+        state, 
+        city
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    db.query(
+      query,
+      [username, email, phoneNumber, companyName, designation, adjustedDate, slot, state, city],
+      async (err, result) => {
+        if (err) {
+          console.error("Error inserting data:", err);
+          return res.status(500).json({ message: "Database error" });
+        }
+
+        // Call the function to create the lead in ERPNext
+        await createLead();
+
+        // Respond to the client
+        res.json({ message: "Form submitted successfully" });
+      }
+    );
+  } catch (error) {
+    console.error("Unexpected error:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 app.post("/submit-form", (req, res) => {
   const {
     request_type_id,
@@ -110,7 +484,7 @@ app.post("/submit-form", (req, res) => {
         console.error("Error inserting data:", err);
         return res.json({ message: "Database error" });
       }
-      res.json({ message: "Form submitted successfully" });
+     res.json({ message: "Form submitted successfully" });
     }
   );
 });
@@ -146,6 +520,19 @@ app.get("/glform-data", (req, res) => {
   });
 });
 
+app.get("/webinar-data", (req, res) => {
+  const query = `SELECT * FROM webinar`;
+
+  // Execute the query to fetch data
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Error fetching data:", err);
+      return res.status(500).send("Database error");
+    }
+    // Send the fetched data as JSON
+    res.status(200).json(results);
+  });
+});
 app.get("/request-types", (req, res) => {
   const query = `SELECT * FROM request_type`;
 
@@ -205,7 +592,7 @@ app.get("/latestThreeBlogs", (req, res) => {
   const baseUrl = process.env.BASE_URL; // Ensure this is set in your .env file
 
   const query = `
-    SELECT b.id, b.unique_identifier ,b.category_id, b.title, b.content, b.publish, b.conclusion, b.created_at, 
+    SELECT b.id,b.unique_identifier, b.category_id, b.title, b.content, b.publish, b.conclusion, b.created_at, 
            bc.category_name, 
            CONCAT(?, b.image) AS blog_image
     FROM blogs b
@@ -227,7 +614,7 @@ app.get("/latestThreeBlogs", (req, res) => {
 const BASE_URL = process.env.BASE_URL;
 
 // API to get blogs by IT
-app.get("/blog/category/2", (req, res) => {
+app.get("/blogs/category/2", (req, res) => {
   const sql = `SELECT *, CONCAT(?, b.image) AS blog_image
 FROM blogs b
 WHERE category_id = ? AND publish = 1
@@ -240,9 +627,21 @@ ORDER BY created_at DESC Limit 3;
     return res.json(results);
   });
 });
-
+app.get("/mainblogs/category/2", (req, res) => {
+  const sql = `SELECT *, CONCAT(?, b.image) AS blog_image
+FROM blogs b
+WHERE category_id = ? AND publish = 1
+ORDER BY created_at DESC;
+`;
+  db.query(sql, [BASE_URL, 2], (error, results) => {
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+    return res.json(results);
+  });
+});
 // API to get blogs by SAP
-app.get("/blog/category/1", (req, res) => {
+app.get("/blogs/category/1", (req, res) => {
   const sql = `SELECT *, CONCAT(?, b.image) AS blog_image
 FROM blogs b
 WHERE category_id = ? AND publish = 1
@@ -255,9 +654,22 @@ ORDER BY created_at DESC Limit 3;
     return res.json(results);
   });
 });
+app.get("/mainblogs/category/1", (req, res) => {
+  const sql = `SELECT *, CONCAT(?, b.image) AS blog_image
+FROM blogs b
+WHERE category_id = ? AND publish = 1
+ORDER BY created_at DESC;
+`;
+  db.query(sql, [BASE_URL, 1], (error, results) => {
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+    return res.json(results);
+  });
+});
 
 // API to get blogs by DM
-app.get("/blog/category/3", (req, res) => {
+app.get("/blogs/category/3", (req, res) => {
   const sql = `SELECT *, CONCAT(?, b.image) AS blog_image
 FROM blogs b
 WHERE category_id = ? AND publish = 1
@@ -270,9 +682,22 @@ ORDER BY created_at DESC Limit 3;
     return res.json(results);
   });
 });
+app.get("/mainblogs/category/3", (req, res) => {
+  const sql = `SELECT *, CONCAT(?, b.image) AS blog_image
+FROM blogs b
+WHERE category_id = ? AND publish = 1
+ORDER BY created_at DESC;
+`;
+  db.query(sql, [BASE_URL, 3], (error, results) => {
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+    return res.json(results);
+  });
+});
 
 // get blog by id
-app.get("/blog/:id", (req, res) => {
+app.get("/blogs/:id", (req, res) => {
   const blogId = req.params.id;
   const baseUrl = process.env.BASE_URL; // Set your base URL here
 
@@ -304,6 +729,7 @@ app.get("/relatedBlogs/:category_id/:id", (req, res) => {
     FROM blogs 
     WHERE category_id = ? AND unique_identifier != ? AND publish = 1 
     ORDER BY created_at DESC
+    LIMIT 3
   `;
 
   db.query(query, [baseUrl, category_id, id], (error, results) => {
@@ -316,7 +742,7 @@ app.get("/relatedBlogs/:category_id/:id", (req, res) => {
 });
 
 // all blogs
-app.get("/blog", (req, res) => {
+app.get("/blogs", (req, res) => {
   const blogId = req.params.id;
   const baseUrl = process.env.BASE_URL; // Set your base URL here
 
@@ -339,7 +765,7 @@ ORDER BY created_at DESC;
 });
 
 // categorized blogs
-app.get("/blog/category/:category_id", (req, res) => {
+app.get("/blogs/category/:category_id", (req, res) => {
   const categoryId = req.params.category_id;
   const query = `
     SELECT 
@@ -387,7 +813,7 @@ app.get("/update/getblogs/:id", (req, res) => {
   });
 });
 
-app.put("/blog/update/:id", upload.single("image"), (req, res) => {
+app.put("/blogs/update/:id", upload.single("image"), (req, res) => {
   const blogId = req.params.id;
   const { category_id, title, stitle, content, conclusion } = req.body;
   const blogImage = req.file;
@@ -425,7 +851,7 @@ app.put("/blog/update/:id", upload.single("image"), (req, res) => {
 });
 
 // delete Blog
-app.delete("/blog/delete/:id", (req, res) => {
+app.delete("/blogs/delete/:id", (req, res) => {
   const blogId = req.params.id;
 
   // SQL query to delete the blog
@@ -443,7 +869,7 @@ app.delete("/blog/delete/:id", (req, res) => {
 });
 
 // pblish Blog
-app.put("/blog/togglePublish/:id", (req, res) => {
+app.put("/blogs/togglePublish/:id", (req, res) => {
   const blogId = req.params.id;
 
   // Query to get the current publish status
@@ -480,7 +906,7 @@ app.put("/blog/togglePublish/:id", (req, res) => {
 });
 
 // content writer
-app.get("/content/blog", (req, res) => {
+app.get("/content/blogs", (req, res) => {
   const blogId = req.params.id;
   const baseUrl = process.env.BASE_URL; // Set your base URL here
 
@@ -501,7 +927,7 @@ ORDER BY created_at DESC;
   });
 });
 
-app.get("/blog/content/category/:category_id", (req, res) => {
+app.get("/blogs/content/category/:category_id", (req, res) => {
   const categoryId = req.params.category_id;
   const query = `
     SELECT 
@@ -554,6 +980,7 @@ app.post("/login", (req, res) => {
         id: user.id,
         email: user.email,
         name: user.name,
+        role_id:user.role_id
       },
     });
   });
@@ -562,3 +989,4 @@ app.post("/login", (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log(`server is listening on port ${process.env.PORT}`);
 });
+

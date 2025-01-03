@@ -21,6 +21,7 @@ const year = date.getFullYear();
         <Sclink to="DMService" className="nav-link"><p>Services</p></Sclink>  
         <Link to="/blog" className="nav-link"><p>Blog</p></Link>
         <Link to="/contact" className="nav-link"><p>Contact Us</p></Link>
+        <hr className="d-sm-block d-lg-none custom-hr" />
       </div>
       <div className='col-sm-4 col-lg-2'>
       <h4><b>Services</b></h4>
@@ -28,6 +29,7 @@ const year = date.getFullYear();
       <Link to="/it-services" className="nav-link"><p>IT Services</p></Link> 
       <Sclink to='DMBanner' className="nav-link"><p>Digital Marketing Services</p></Sclink>
       <Link to="/hr-consultancy" className="nav-link"><p>HR Consultancy</p></Link>
+      <hr className="d-sm-block d-lg-none custom-hr" />
       </div>
       <div className='col-sm-4 col-lg-2'>
 <h4><b>Our Branches</b></h4>
@@ -64,7 +66,7 @@ const year = date.getFullYear();
         <a href="https://www.kgisl.com/"><img src={kgisllogo} title='KGiSL' alt="KGISL Logo" className="kgisllogo" height={50} width={150} loading="lazy"/></a> 
         <div className='d-flex flex-column justify-content-center'>
         <div>
-        <p className='mt-3'>Follow Us on</p>                                                                                    
+        <p className='mt-3'>Follow us on</p>                                                                                    
         </div>
         <div className='pb-4'>
         <a href="https://www.facebook.com/profile.php?id=61557350633724"><FontAwesomeIcon icon={faFacebook} className="text-white mx-2"></FontAwesomeIcon></a>

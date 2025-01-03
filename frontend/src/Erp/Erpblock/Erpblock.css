@@ -1,0 +1,52 @@
+.planimg{
+    height: 80px;
+}
+
+.Erpblock{
+    color: #291571;
+}
+.borderparts{
+    box-shadow: 1px 2px 3px grey;
+    background-color: #F4FEFF;
+    border-top-right-radius: 180px;
+    border-bottom-right-radius: 180px;
+}
+
+.brd{
+   
+    border-bottom: 1px solid #291571;
+    border-right:1px solid #291571;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border-top-right-radius: 180px;
+    border-bottom-right-radius: 180px;
+}
+
+  
+  .erpgeniustext {
+    text-align: center; /* Center align text */
+    font-weight: none !important;
+    font-size: 24px;
+  }
+  
+  .erpmobile p {
+    font-size: 1rem; /* Adjust paragraph font size */
+    color: #555; /* Optional text color */
+  }
+  
+.erpmobile{
+    border-radius: 150px !important;
+    background-color: #F4FEFF;
+    box-shadow: 0 4px 3px #b4e1e4;
+}
+
+@media (max-width:768px){
+    .erpgeniustext{
+        color: #291571;
+        font-weight: 600;
+        font-size: 18px;
+    } 
+    .planimg{
+        height: 70px !important;
+    }  
+}

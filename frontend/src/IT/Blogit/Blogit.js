@@ -13,7 +13,7 @@ function Blogit() {
   useEffect(() => {
     // Fetch the main blog data
     axios
-      .get(`https://www.kggeniuslabs.com:5000/blog/${id}`)
+      .get(`https://www.kggeniuslabs.com:5000/blogs/${id}`)
       .then((res) => {
         setBlog(res.data);
         setCategoryId(res.data.category_id);

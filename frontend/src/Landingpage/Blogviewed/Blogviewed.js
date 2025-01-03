@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Blogviewed.css";
 import axios from "axios";
-
+import { Helmet } from 'react-helmet';
 function Blogviewed() {
   const [blogs, setBlogs] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -12,7 +12,7 @@ function Blogviewed() {
     setBlogs([]);
     if (selectedCategory === "All") {
       axios
-        .get(`https://www.kggeniuslabs.com:5000/blog?t=${Date.now()}`)
+        .get(`https://www.kggeniuslabs.com:5000/blogs?t=${Date.now()}`)
         .then((res) => {
           console.log(res.data);
           setBlogs(res.data);
@@ -21,7 +21,7 @@ function Blogviewed() {
     } else if (categoryId) {
       axios
         .get(
-          `https://www.kggeniuslabs.com:5000/blog/category/${categoryId}?t=${Date.now()}`
+          `https://www.kggeniuslabs.com:5000/mainblogs/category/${categoryId}?t=${Date.now()}`
         )
         .then((res) => {
           console.log(res.data);
@@ -64,6 +64,14 @@ function Blogviewed() {
   };
 
   return (
+    <>
+    <Helmet>
+    <title> Insights & Trends | KG Genius Labs Blog on SAP & IT Solutions</title>
+        <meta name="description" content="Explore the latest trends in SAP S/4HANA, digital transformation, and IT solutions with KG Genius Labs. Our blog offers valuable insights and strategies for businesses and professionals." />
+        <meta name="keywords" content=" KG Genius Labs Blog, SAP S/4HANA Insights, IT Solutions Trends, Digital Marketing Blog, Business Technology Strategies, Latest SAP Trends, IT Innovation Insights, ERP Solutions , SAP S/4HANA Implementation Strategies" />
+        <link rel="canonical" href="https://www.kggeniuslabs.com/blog" />
+      </Helmet>
+
     <div className="container-fluid">
       <h1 className="text-center headblog mb-5">
         <b>Additional Insights</b>
@@ -76,7 +84,8 @@ function Blogviewed() {
               className={`lnkfnt ${
                 selectedCategory === category ? "active" : ""
               } col-12 col-md-auto text-start mb-2 mb-md-0`}
-              onClick={() => handleCategoryClick(category)}>
+              onClick={() => handleCategoryClick(category)}
+            >
               {category === "IT" ? "IT Services" : category}
             </Link>
           ))}
@@ -89,15 +98,18 @@ function Blogviewed() {
             key={blog.id}
             className={`col-sm-12 col-lg-5 ${
               index % 2 === 0 ? "offset-lg-1" : "offset-lg-1 right-card"
-            }`}>
+            }`}
+          >
             <Link
               style={{ textDecoration: "none" }}
-              to={getPath(blog.category_id, blog.unique_identifier)}>
+              to={getPath(blog.category_id, blog.unique_identifier)}
+            >
               <div className="card shadowcard my-4">
                 <img
                   src={blog.blog_image}
                   alt={blog.title}
-                  className="card-img-top cm1"/>
+                  className="card-img-top cm1"
+                />
                 <div className="card-body">
                   <h5 className="card-title">
                     <b>{blog.title}</b>
@@ -109,6 +121,7 @@ function Blogviewed() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 

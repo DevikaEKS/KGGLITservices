@@ -61,7 +61,7 @@ function Blogupdation() {
 
     // Send a PUT request to update the blog post
     axios
-      .put(`https://www.kggeniuslabs.com:5000/blog/update/${decodedId}`, formData, {
+      .put(`https://www.kggeniuslabs.com:5000/blogs/update/${decodedId}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

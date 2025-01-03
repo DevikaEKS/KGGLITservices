@@ -14,7 +14,7 @@ function InsightsIT() {
 
   useEffect(() => {
     axios
-      .get(`https://www.kggeniuslabs.com:5000/blog/category/2`)
+      .get(`https://www.kggeniuslabs.com:5000/blogs/category/2`)
       .then((res) => {
         console.log(res.data);
         setBlogs(res.data); // Store the fetched data in state
@@ -32,15 +32,18 @@ function InsightsIT() {
           blogs.map((blog) => (
             <div className="col-sm-12 col-lg-4" key={blog.id}>
               <div className="card colourcard text-light my-3">
-                <img src={blog.blog_image} // Use the full blog image URL from the API
+                <img
+                  src={blog.blog_image} // Use the full blog image URL from the API
                   title={blog.title}
                   alt={blog.title}
-                  className="card-img-top"/>
+                  className="card-img-top"
+                />
                 <div className="card-body">
                   <h5 className="card-title title-ellipsis">{blog.title}</h5>
                   <button
                     className="readbtn rounded-3 p-2"
-                    onClick={() => handleReadMoreClick(blog.unique_identifier)}>
+                    onClick={() => handleReadMoreClick(blog.unique_identifier)} // Pass the blog id to the handler
+                  >
                     Read More
                   </button>
                 </div>

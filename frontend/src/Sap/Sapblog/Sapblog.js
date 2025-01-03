@@ -13,7 +13,7 @@ function Sapblog() {
 
   useEffect(() => {
     axios
-      .get(`https://www.kggeniuslabs.com:5000/blog/category/1`)
+      .get(`https://www.kggeniuslabs.com:5000/blogs/category/1`)
       .then((res) => {
         console.log(res.data);
         setBlogs(res.data); // Store the fetched data in state
@@ -32,14 +32,18 @@ function Sapblog() {
         {blogs.map((blog) => (
           <div key={blog.id} className="col-sm-12 col-lg-4">
             <div className="card colourcard text-light my-3">
-              <img src={blog.blog_image} title={blog.title}
+              <img
+                src={blog.blog_image} // Use the full blog image URL from the API
+                title={blog.title}
                 alt={blog.title}
-                className="card-img-top"/>
+                className="card-img-top"
+              />
               <div className="card-body">
                 <h5 className="card-title title-ellipsis">{blog.title}</h5>
                 <button
                   className="readbtn rounded-3 p-2"
-                  onClick={() => handleReadMoreClick(blog.unique_identifier)}>
+                  onClick={() => handleReadMoreClick(blog.unique_identifier)}
+                >
                   Read More
                 </button>
                 <div className="py-3"></div>

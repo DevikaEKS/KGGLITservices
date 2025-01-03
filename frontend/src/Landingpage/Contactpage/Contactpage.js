@@ -5,7 +5,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import "./Contactpage.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { Helmet } from 'react-helmet';
 function Contactpage() {
   const [countryCodes, setCountryCodes] = useState([]);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
@@ -181,6 +181,15 @@ function Contactpage() {
   };
 
   return (
+    <>
+    <Helmet>
+        <title> Contact KG Genius Labs | Connect with Our IT & SAP Experts
+</title>
+        <meta name="description" content="Get in touch with KG Genius Labs today! Whether you're looking for SAP S/4HANA solutions, IT consultancy, or digital marketing services, we’re here to help." />
+        <meta name="keywords" content=" Contact KG Genius Labs, IT Consultancy, SAP S/4HANA Experts , Digital Marketing Services Inquiry, HR Consultancy " />
+        <link rel="canonical" href="https://www.kggeniuslabs.com/contact" />
+      </Helmet>
+
     <div className="container-fluid frmcontacts" id="sapcontact">
       <ToastContainer />
       <div className="container">
@@ -412,6 +421,7 @@ function Contactpage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

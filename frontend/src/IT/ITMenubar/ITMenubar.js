@@ -6,13 +6,13 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link as RouterLink } from 'react-router-dom'; // Renamed to avoid conflict with react-scroll's Link
 import { Link as ScrollLink } from "react-scroll"; // For scrolling
 import logo from "../../Asset/Logo Tagline-02 (1).png";
-
-
+import "./ITMenubar.css";
 function ITMenubar() {
   const [expanded, setExpanded] = useState(false); 
   const handleToggle = () => setExpanded(!expanded); 
   const handleSelect = () => setExpanded(false); 
-
+  const [hrDropdownOpen, setHrDropdownOpen] = useState(false); // State for HR dropdown
+  const toggleHrDropdown = () => setHrDropdownOpen(!hrDropdownOpen); // Toggle HR dropdown
   return (
     <Navbar expand="lg" className="bg-body-tertiary" expanded={expanded}>
       <Container>
@@ -24,8 +24,41 @@ function ITMenubar() {
           <Nav className="mx-auto">
             <Nav.Link as={RouterLink} to="/" className='navtext px-3' onClick={handleSelect}>Home</Nav.Link>
             <Nav.Link as={RouterLink} to="/aboutus" className='navtext px-3' onClick={handleSelect}>About Us</Nav.Link>
-            <NavDropdown title={<span className='px-3 navtext1'>Our Services</span>} id="basic-nav-dropdown">
-              <NavDropdown.Item as={RouterLink} to="/sap-services" className='navtext1' onClick={handleSelect}>SAP Services</NavDropdown.Item>
+            <NavDropdown
+              title={<span className=" px-3 navtext1">Our Services</span>}
+              id="basic-nav-dropdown">
+              {/* HR Consultancy Dropdown */}
+              <div
+                className="dropdown-item navtext1"
+                onClick={toggleHrDropdown}
+                style={{ cursor: "pointer" }}
+              >
+                ERP Services
+              </div>
+              {hrDropdownOpen && (
+                <div
+                  className={`dropdown-submenu bg-light rounded-3 ${
+                    expanded ? "d-block d-lg-none" : "d-none d-lg-block"
+                  }`}
+                >
+                  <NavDropdown.Item
+                    as={RouterLink}
+                    to="/sap-services"
+                    className="navtext1"
+                    onClick={handleSelect}
+                  >
+                   SAP Services
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={RouterLink}
+                    to="/custom-erp-software-solution"
+                    className="navtext1"
+                    onClick={handleSelect}
+                  >
+                    KG Genius ERP
+                  </NavDropdown.Item>
+                </div>
+              )}
               <NavDropdown.Item as={RouterLink} to="/it-services" className='navtext1 px-3' onClick={handleSelect}>IT Services</NavDropdown.Item>
               <NavDropdown.Item as={RouterLink} to="/digital-marketing-services" className='navtext1' onClick={handleSelect}>Digital Marketing Services</NavDropdown.Item>
               <NavDropdown.Item as={RouterLink} to="/hr-consultancy" className='navtext1' onClick={handleSelect}>HR Consultancy</NavDropdown.Item>

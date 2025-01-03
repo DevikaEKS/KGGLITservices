@@ -1,0 +1,36 @@
+.erpbenef{
+    font-size: 32px;
+    color: #291571;
+    font-weight: 600;
+}
+
+@media (max-width:426px){
+    .erpbenef{
+        font-size: 32px;
+    }
+ 
+}
+
+.bgcolordata {
+    background-color: #291571;
+    color: white; 
+    border-radius: 90px;        
+    min-height: 120px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+ .benefitsimg{
+   max-width: 250px !important;
+ } 
+.bgcolordata p {
+    margin: 0;
+    font-size: 1rem;
+}
+  
+
+.crd12{
+    max-width: 350px;
+}
+
+
+
+  

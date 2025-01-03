@@ -1,11 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import "./Ourservices.css";
 import SwiperCard3D from '../Swipingcard/Swipingcard';
-
 const texts = ["SAP Services", "IT Services", "Digital Marketing Services", "HR Consultancy"];
-
 function Ourservices() {
   const [currentText, setCurrentText] = useState(0);
 
@@ -13,7 +10,6 @@ function Ourservices() {
     const interval = setInterval(() => {
       setCurrentText((prevText) => (prevText + 1) % texts.length);
     }, 5100);
-
     return () => clearInterval(interval);
   }, []);
 

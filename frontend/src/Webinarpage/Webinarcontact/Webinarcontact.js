@@ -8,8 +8,9 @@ import Select from "@mui/material/Select";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {  State, City } from "country-state-city";
-
-
+import 'react-datepicker/dist/react-datepicker.css';
+import DatePicker from 'react-datepicker';
+import { MobileStepper } from "@mui/material";
 function Webinarcontact() {
   const [countryCodes, setCountryCodes] = useState([]);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
@@ -24,6 +25,14 @@ const [countdown, setCountdown] = useState({days: 0,
   hours: 0,
   minutes: 0,
   seconds: 0,});
+  const [selectedDate, setSelectedDate] = useState(new Date(2024, 11, 14)); // December 14, 2024
+
+  // Function to disable Sundays
+  const isSunday = (date) => {
+    const day = date.getDay(); // Sunday is 0
+    return day === 0;
+  };
+
 const [errors, setErrors] = useState({});
 const [loading, setLoading] = useState(false);
 const [requestType, setRequestType] = useState(""); 
@@ -33,8 +42,8 @@ const [requestType, setRequestType] = useState("");
     phoneNumber: "",
     companyName: "",
     designation:"",
-    state:"",
-    city:""
+    slot:"07:00 PM-08:00 PM",
+    // city:""
    
   });
 
@@ -60,7 +69,7 @@ const [requestType, setRequestType] = useState("");
 
   
   useEffect(() => {
-    const targetDate = new Date("2024-12-14T19:00:00+05:30"); // Target date: 14th December 2024, 7 PM IST
+    const targetDate = new Date("2025-01-11T19:00:00+05:30"); // Target date: 14th December 2024, 7 PM IST
     const interval = setInterval(() => {
       const now = new Date();
       const timeDifference = targetDate - now;
@@ -155,25 +164,41 @@ const [requestType, setRequestType] = useState("");
   };
 
   const handleSubmit = (e) => {
+    
     e.preventDefault();
-    if (!validateForm()) return;
+    // if (!validateForm()) return;
     const fullPhoneNumber = `${selectedCountryCode}${formData.phoneNumber}`;
     const formValues = {
       username: formData.username,
       email: formData.email,
-      phno: fullPhoneNumber,
-      company_name: formData.companyName,
-      message: formData.description,
-      request_type_id: requestType,
+      phoneNumber: fullPhoneNumber,
+      companyName: formData.companyName,
+      designation:formData.designation,
+      date:selectedDate,
+      slot:formData.slot,
+      state:selectedState,
+      city:selectedCity
+     
     };
-
+    const leadData={
+      name:formData.username,
+      "Organization Name":formData.companyName,
+      Email:formData.email,
+      "Mobile No":fullPhoneNumber,
+      Phone:fullPhoneNumber,
+      source :"www.kggeniuslabs.com"
+    }
     console.log(formValues);
 
     setLoading(true);
     axios
-      .post("https://www.kggeniuslabs.com:5000/submit-form", formValues)
+      // .post("https://www.kggeniuslabs.com:5000/submit-form", formValues)
+      .post("https://www.kggeniuslabs.com:5000/webinar-form", formValues)
+      // .post("http://192.168.254.144:5000/webinar-form", formValues)
       .then((response) => {
         if (response.data.message === "Form submitted successfully") {
+         
+        
           toast.success("Form submitted successfully");
           resetForm();
 
@@ -181,6 +206,9 @@ const [requestType, setRequestType] = useState("");
           toast.error("Value not inserted, try again");
         } else if (response.data.message === "Email already exists") {
           toast.error("Email already exists");
+        }
+        else{
+          alert("completed")
         }
       })
       .catch((error) => {
@@ -198,6 +226,9 @@ const [requestType, setRequestType] = useState("");
       email: "",
       phoneNumber: "",
       companyName: "",
+      designation:"",
+      state:"",
+      city:""
      
      
     });
@@ -245,8 +276,8 @@ const [requestType, setRequestType] = useState("");
         <div className="row  py-4">
           <div className="col-sm-12 col-md-6 d-flex align-items-center justify-content-center">
             <div className="textcontact text-light">
-              <h2 className="sapcontacthead text-center my-sm-4 my-lg-0">Saturday,<br/>                                                                                                                                                                                                        December 14,2024</h2>
-              <p className="sapcontentpara text-center"><b>7PM-9PM IST</b></p>
+              <h2 className="sapcontacthead text-center my-sm-4 my-lg-0">Saturday,<br/>                                                                                                                                                                                                        January 11,2025</h2>
+              <p className="sapcontentpara text-center"><b>7PM-8PM IST</b></p>
 
               {/* <div className="d-flex justify-content-center py-3">
                 {["Box 1", "Box 2", "Box 3", "Box 4"].map((box, index) => (
@@ -359,19 +390,27 @@ const [requestType, setRequestType] = useState("");
               </div>
        
 
-       <div className="form-group m-3">
-                <label className="form-label">Designation</label>
-                <input
-                  type="text"
-                  className="form-control form-control1"
-                  name="designation"
-                  value={formData.designation}
-                  onChange={handleChange}
-                  placeholder="Enter your Designation"/>
-                {errors.designation && (
-                  <p className="text-danger">{errors.designation}</p>
-                )}
-              </div>
+              <div className="form-group m-3">
+  <label className="form-label">Designation</label>
+  <select
+    className="form-control form-control1"
+    name="designation"
+    value={formData.designation}
+    onChange={handleChange}
+    required
+  >
+    <option value="" disabled>
+      Select your Designation
+    </option>
+    <option value="Chief Officer">Chief Officer</option>
+    <option value="Manager">Manager</option>
+    <option value="Employee">Employee</option>
+    <option value="Others">Others</option>
+  </select>
+  {errors.designation && (
+    <p className="text-danger">{errors.designation}</p>
+  )}
+</div>
   
 
 
@@ -400,7 +439,43 @@ const [requestType, setRequestType] = useState("");
    
   </div>
 
-
+  <div className="form-group m-3">
+      <label className="form-label">Select Slot</label>
+      <div className="d-flex form-control form-control1">
+      <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)} // Handle date change
+          minDate={new Date(2025, 0, 11)} // Set minimum date to December 14
+          filterDate={(date) => !isSunday(date)} // Disable Sundays
+          dateFormat="dd-MM-yyyy" // Display format
+          className="form-control form-control1" // Styling
+          style={{ width: "55%" }} // Adjust width
+        />
+        {/* <select className="mr-2 form-control form-control1" style={{ width: "45%" }}
+        value={formData.slot}
+        onChange={handleChange}
+        required> 
+          <option value="11:00 AM-12:00 PM">11:00 AM-12:00 PM</option>
+          <option value="03:00 PM-04:00 PM">03:00 PM-04:00 PM</option>
+          <option value="07:00 PM-08:00 PM">07:00 PM-08:00 PM</option>
+        </select> */}
+        <select
+    className="form-control form-control1"
+    name="slot"
+    value={formData.slot}
+    onChange={handleChange}
+    required
+  >
+    <option value="" disabled>
+      Select a Slot
+    </option>
+    <option value="11:00 AM-12:00 PM">11:00 AM-12:00 PM</option>
+    <option value="03:00 PM-04:00 PM">03:00 PM-04:00 PM</option>
+    <option value="07:00 PM-08:00 PM">07:00 PM-08:00 PM</option>
+  </select>
+        
+      </div>
+    </div>
 
   <div className="form-group m-3">
         <label className="form-label">State</label>

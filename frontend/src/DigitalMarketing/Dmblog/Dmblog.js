@@ -13,7 +13,7 @@ function Dmblog() {
 
   useEffect(() => {
     axios
-      .get(`https://www.kggeniuslabs.com:5000/blog/category/3`)
+      .get(`https://www.kggeniuslabs.com:5000/blogs/category/3`)
       .then((res) => {
         console.log(res.data);
         setBlogs(res.data); // Store the fetched data in state

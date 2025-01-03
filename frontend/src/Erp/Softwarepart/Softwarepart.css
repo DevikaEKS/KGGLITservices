@@ -1,0 +1,29 @@
+.softwarepart{
+    color: #291571;
+    text-align: justify;
+}
+.erpheading{
+    color: #291571;
+    font-size: 32px;
+    font-weight: 600;
+}
+.erptxt1{
+    color: #291571;
+    font-size: 20px;
+    font-weight: 600;
+}
+.bannerimg{
+    height: 450px;
+}
+.txtgenius{
+    text-align: start;
+} 
+
+@media (max-width:768px){
+    .bannerimg{
+        max-height: 320px;
+    }
+    .txtgenius{
+        text-align: center;
+    } 
+}

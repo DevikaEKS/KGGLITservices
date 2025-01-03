@@ -43,24 +43,42 @@ function Loginpage() {
 
     if (isValid) {
       axios
+        // .post("http://localhost:5000/login", { email, password })
         .post("https://www.kggeniuslabs.com:5000/login", { email, password })
         .then((response) => {
           console.log(response);
 
           if (response.data.message === "Login successful") {
             const userid = response.data.user.id;
+            const role_id = response.data.user.role_id;
+            console.log("id",role_id)
+            if(role_id===1){
+              navigate(`/blogeditor/${btoa(userid)}`, {
+                // state: {
+                //   isAuthenticated: true,
+                //   title: "Blog Title",
+                //   category: "Category",
+                //   content: "Blog content",
+                //   conclusion: "Blog conclusion",
+                //   image: "image-url",
+                // },
+              });
+            }
+            else if(role_id===2){
+              navigate(`/sales/${userid}`)
+            }
             console.log(userid);
 
-            navigate(`/blogeditor/${btoa(userid)}`, {
-              // state: {
-              //   isAuthenticated: true,
-              //   title: "Blog Title",
-              //   category: "Category",
-              //   content: "Blog content",
-              //   conclusion: "Blog conclusion",
-              //   image: "image-url",
-              // },
-            });
+            // navigate(`/blogeditor/${btoa(userid)}`, {
+            //   // state: {
+            //   //   isAuthenticated: true,
+            //   //   title: "Blog Title",
+            //   //   category: "Category",
+            //   //   content: "Blog content",
+            //   //   conclusion: "Blog conclusion",
+            //   //   image: "image-url",
+            //   // },
+            // });
           } else if (response.data.message === "Invalid email or password") {
             alert("Invalid email or password");
           } else if (

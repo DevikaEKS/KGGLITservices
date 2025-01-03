@@ -9,9 +9,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { Link as Sclink } from "react-scroll";
-
+import { Helmet } from 'react-helmet';
 function Banner() {
   return (
+    <>
+    
+    <Helmet>
+        <title>KG Genius Labs - SAP Consulting, IT & Digital Transformation, Digital Marketing.</title>
+        <meta name="description" content="Discover KG Genius Labs for expert SAP consultation, innovative IT solutions, CRM development, digital marketing strategies, and custom LMS development. Your trusted partner for transforming ideas into innovation and growth." />
+        <meta name="keywords" content=" kggeniuslabs, KG Genius Labs, SAP Consulting in coimbatore, IT Services in coimbatore, SAP Consulting, IT Solutions, Digital Transformation, CRM Development, Digital Marketing, Custom LMS Development, Best SAP consulting services, SEO Service in coimbatore, Website Development " />
+        <link rel="canonical" href="https://www.kggeniuslabs.com" />
+      </Helmet>
+
     <Carousel id='Homepart' controls={false} interval={3000} pause={false}>
       <Carousel.Item>
         <img className="d-block w-100" src={bannerimg1} title='KG Genius Labs' alt=" Empowering businesses with cutting-edge web development, mobile applications, and comprehensive IT Services like CRM and LMS, coupled with strategic digital marketing solutions" width="1200" height="400"/>
@@ -63,6 +72,7 @@ function Banner() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </>
   );
 }
 

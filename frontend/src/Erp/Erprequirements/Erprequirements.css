@@ -1,0 +1,174 @@
+.requirementscard .card{
+background-color: #E7F6FF;
+border: 0px !important;
+}
+.reqimg{
+    height: 100px;   
+}
+.customparagraph{
+    color: #291571;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.financetext{
+  font-size: 22px;
+  color: #291571;
+  font-weight: 500;
+}
+.erpreqirementscard{
+background-color: #E7F6FF !important;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+color: #291571;
+height: 280px !important;
+position: relative;
+overflow: hidden;
+transition: transform 0.3s ease;
+}
+
+
+.erpreqirementscard {
+    position: relative;
+    overflow: hidden;
+    height: 350px; /* Adjust as needed */
+    width: 100%; /* Adjust to match your design */
+    background-color: transparent;
+    transition: transform 0.3s ease;
+  }
+  
+  .erpreqirementscard:hover {
+    border: 1px solid #0099FF !important; 
+  }
+  
+  /* Circle animation */
+  .erpreqirementscard::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 0;
+    height: 0;
+    background: white;
+    border-radius: 50%;
+    z-index: 1;
+    transition: transform 0.6s ease, width 0.6s ease, height 0.6s ease;
+  }
+  
+  .erpreqirementscard:hover::before {
+    width: 300%;
+    height: 300%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+
+  .card-content {
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Hidden content initially */
+  .hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 10px 10px;
+    text-align: start;
+    background-color: transparent;
+    color: #291571;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+   
+  }
+  /* On hover: hide initial content and show hover content */
+.erpreqirementscard:hover .card-content {
+    opacity: 0;
+}
+  
+.erpreqirementscard:hover .hover-content {
+    opacity: 1;
+}
+
+.cardserp {
+    padding: 20px;
+    border: none !important;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: #291571 !important;
+}
+  
+.imgbx {
+    position: absolute;
+    top: -14px; 
+    left: -14px; 
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 0px !important;
+    background-color:white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; 
+}
+  
+.sticky-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+  
+  .finance-text {
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+    font-size: 20px; 
+    font-weight: bold;
+    margin-top: 10px;
+    color: #fff;
+    text-align: end;
+    z-index: 2;
+  }
+  
+  .feature-list {
+    margin-top: 90px; 
+    padding-left: 20px;
+    color: #fff;
+  }
+  
+  .erpheading3{
+    color: #291571;
+    font-size: 30px !important;
+  }
+
+  
+  .erpheading4{
+    color: #291571;
+    font-size: 34px ;
+    font-weight: 600;
+  }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+  
