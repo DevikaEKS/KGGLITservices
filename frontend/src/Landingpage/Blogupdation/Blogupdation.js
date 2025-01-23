@@ -92,6 +92,7 @@ function Blogupdation() {
               <option value="1">SAP</option>
               <option value="2">IT Services</option>
               <option value="3">Digital Marketing</option>
+              <option value="5">ERP</option>
             </select>
           </div>
         </div>

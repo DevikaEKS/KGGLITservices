@@ -13,7 +13,7 @@
     font-weight: 700 !important;
   }
 .nav-link{
-   cursor: pointer;
+   cursor: pointer !important;
 }
 
 

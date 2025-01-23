@@ -17,4 +17,41 @@
     color: red;
 }
 
+
+
+
+.custom-dropdownfoot {
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer !important; 
+  }
+  
+  .custom-dropdownfoot option {
+    background-color: #291571 !important; /* Make the dropdown options transparent */
+    color: white;
+    cursor: pointer !important; /* Set text color to white */
+  }
+  
+  .custom-dropdownfoot option:hover {
+    background-color: #fff !important; 
+    color: #291571;
+    cursor: pointer !important;
+  }
+  
+
+  .custom-dropdownfoot:focus {
+    outline: none !important; /* Remove focus outline for a cleaner look */
+    box-shadow: none !important;
+    border: 0 !important;
+    cursor: pointer !important;
+  }
+  
+
+
+
+
+
+
   

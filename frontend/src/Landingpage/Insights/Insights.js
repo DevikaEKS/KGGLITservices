@@ -15,7 +15,9 @@ function Insights() {
     } else if (categoryId === 2) {
       navigate(`/it-blog/${blogId}`); // Pass blogId in URL
     } else if (categoryId === 3) {
-      navigate(`/digital-marketing-blog/${blogId}`); // Pass blogId in URL
+      navigate(`/digital-marketing-blog/${blogId}`);
+     } else if (categoryId === 5) {
+        navigate(`/erp-blog/${blogId}`); // Pass blogId in URL
     } else {
       console.warn("Unknown category ID:", categoryId);
     }

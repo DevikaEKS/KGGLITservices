@@ -46,6 +46,7 @@ function Footerblog() {
           <h4>
             <b>Services</b>
           </h4>
+          <Link to="/custom-erp-software-solution" className="nav-link"><p>KG Genius ERP</p></Link>
           <Link to="/sap-services" className="nav-link">
             <p>SAP Services</p>
           </Link>
@@ -87,8 +88,7 @@ function Footerblog() {
               href="https://www.google.com/maps?q=Ideaspace+Business+Center,+Millennium+Executive+Tower,+Sheikh+Zayed+Road,+Dubai,+United+Arab+Emirates"
               className="text-decoration-none text-light"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <span className="d-block pt-sm-0 pt-md-5 h6">
                 <b>Dubai</b>
               </span>

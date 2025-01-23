@@ -28,6 +28,7 @@ const year = date.getFullYear();
         </div>
         <div className='col-sm-4 col-lg-3'>
           <h4><b>Services</b></h4>
+          <Link to="/custom-erp-software-solution" className="nav-link"><p>KG Genius ERP</p></Link>
           <Link to="/sap-services" className="nav-link"><p>SAP Services</p></Link>
           <Link to="/it-services" className="nav-link"><p>IT Services</p></Link> 
           <Link to="/digital-marketing-services" className="nav-link"><p>Digital Marketing Services</p></Link>

@@ -695,7 +695,33 @@ ORDER BY created_at DESC;
     return res.json(results);
   });
 });
-
+//erp blog
+app.get("/blogs/category/5", (req, res) => {
+  const sql = `SELECT *, CONCAT(?, b.image) AS blog_image
+FROM blogs b
+WHERE category_id = ? AND publish = 1
+ORDER BY created_at DESC Limit 3;
+`;
+  db.query(sql, [BASE_URL, 5], (error, results) => {
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+    return res.json(results);
+  });
+});
+app.get("/mainblogs/category/5", (req, res) => {
+  const sql = `SELECT *, CONCAT(?, b.image) AS blog_image
+FROM blogs b
+WHERE category_id = ? AND publish = 1
+ORDER BY created_at DESC;
+`;
+  db.query(sql, [BASE_URL, 5], (error, results) => {
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+    return res.json(results);
+  });
+});
 // get blog by id
 app.get("/blogs/:id", (req, res) => {
   const blogId = req.params.id;
@@ -721,7 +747,6 @@ app.get("/blogs/:id", (req, res) => {
 app.get("/relatedBlogs/:category_id/:id", (req, res) => {
   const { category_id, id } = req.params;
   const baseUrl = process.env.BASE_URL; // Your base URL for images
-
   const query = `
     SELECT id, category_id, title, content, conclusion, 
            CONCAT(?, image) AS blog_image, unique_identifier, 
@@ -729,14 +754,13 @@ app.get("/relatedBlogs/:category_id/:id", (req, res) => {
     FROM blogs 
     WHERE category_id = ? AND unique_identifier != ? AND publish = 1 
     ORDER BY created_at DESC
-    LIMIT 3
+    
   `;
 
   db.query(query, [baseUrl, category_id, id], (error, results) => {
     if (error) {
       return res.status(500).json({ error: "Database query failed" });
     }
-
     res.json(results);
   });
 });
@@ -745,7 +769,6 @@ app.get("/relatedBlogs/:category_id/:id", (req, res) => {
 app.get("/blogs", (req, res) => {
   const blogId = req.params.id;
   const baseUrl = process.env.BASE_URL; // Set your base URL here
-
   const sql = `SELECT id, category_id, title, unique_identifier, content, conclusion, created_at, 
        CONCAT(?, image) AS blog_image 
 FROM blogs 
@@ -808,7 +831,6 @@ app.get("/update/getblogs/:id", (req, res) => {
     if (results.length === 0) {
       return res.status(404).json({ error: "Blog not found" });
     }
-
     res.json(results[0]); // Send the first result (the blog details)
   });
 });

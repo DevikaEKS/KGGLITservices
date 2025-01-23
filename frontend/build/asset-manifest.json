@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.78279475.css",
-    "main.js": "/static/js/main.527e6c6c.js",
+    "main.css": "/static/css/main.1b0456f6.css",
+    "main.js": "/static/js/main.5f9fa1cb.js",
     "static/js/453.c6b2d817.chunk.js": "/static/js/453.c6b2d817.chunk.js",
     "static/media/working-with-blueprint.jpg": "/static/media/working-with-blueprint.64ee90685d64d5ff885b.jpg",
     "static/media/successful-medical-team.jpg": "/static/media/successful-medical-team.069c2a753e904724a006.jpg",
@@ -94,12 +94,12 @@
     "static/media/SAP-SuccessFactors-Logo 1.png": "/static/media/SAP-SuccessFactors-Logo 1.d7417a897149388f26ae.png",
     "static/media/rubyimage.png": "/static/media/rubyimage.c002d02bdb350ef07359.png",
     "index.html": "/index.html",
-    "main.78279475.css.map": "/static/css/main.78279475.css.map",
-    "main.527e6c6c.js.map": "/static/js/main.527e6c6c.js.map",
+    "main.1b0456f6.css.map": "/static/css/main.1b0456f6.css.map",
+    "main.5f9fa1cb.js.map": "/static/js/main.5f9fa1cb.js.map",
     "453.c6b2d817.chunk.js.map": "/static/js/453.c6b2d817.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78279475.css",
-    "static/js/main.527e6c6c.js"
+    "static/css/main.1b0456f6.css",
+    "static/js/main.5f9fa1cb.js"
   ]
 }

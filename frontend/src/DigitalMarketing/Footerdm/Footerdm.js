@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faLinkedin, faSquareXTwitter, faYoutube} from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import { Link as Sclink } from "react-scroll";
+
 function Footerdm() {
     useEffect(() => {
         window.scrollTo(0, 0); 
@@ -23,15 +24,29 @@ const year = date.getFullYear();
         <Link to="/contact" className="nav-link"><p>Contact Us</p></Link>
         <hr className="d-sm-block d-lg-none custom-hr" />
       </div>
-      <div className='col-sm-4 col-lg-2'>
-      <h4><b>Services</b></h4>
-      <Link to="/sap-services" className="nav-link"><p>SAP Services</p></Link>
-      <Link to="/it-services" className="nav-link"><p>IT Services</p></Link> 
-      <Sclink to='DMBanner' className="nav-link"><p>Digital Marketing Services</p></Sclink>
-      <Link to="/hr-consultancy" className="nav-link"><p>HR Consultancy</p></Link>
-      <hr className="d-sm-block d-lg-none custom-hr" />
-      </div>
-      <div className='col-sm-4 col-lg-2'>
+     
+      
+ <div className="col-sm-4 col-lg-3">
+  <h4><b>Services</b></h4>
+  <Link to="/custom-erp-software-solution" className="nav-link ms-1">
+    <p>KG Genius ERP</p>
+  </Link>
+  <Link to="/sap-services" className="nav-link ms-1">
+    <p>SAP Services</p>
+  </Link>
+  <Link to="/it-services" className="nav-link ms-1">
+    <p>IT Services</p>
+  </Link>
+  <Sclink to="DMBanner" className="nav-link ms-1">
+    <p>Digital Marketing Services</p>
+  </Sclink>
+  <Link to="/hr-consultancy" className="nav-link ms-1">
+    <p>HR Consultancy</p>
+  </Link>
+  <hr className="d-sm-block d-lg-none custom-hr ms-1" />
+</div> 
+
+    <div className='col-sm-4 col-lg-2'>
 <h4><b>Our Branches</b></h4>
 <p>
   <a

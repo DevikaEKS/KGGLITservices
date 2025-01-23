@@ -85,6 +85,8 @@ import Benefitsoferp from "./Erp/Benefitsoferp/Benefitsoferp";
 import Erpblock from "./Erp/Erpblock/Erpblock";
 import Erpcontact from "./Erp/Erpcontact/Erpcontact";
 import { RedirectToExternal } from "./Landingpage/RedirectToExternal/RedirectToExternal";
+import Erpblogview from "./Erp/Erpblogview/Erpblogview";
+import ERPInsights from "./Erp/ERPInsights/ERPInsights";
 
 function App() {
   return (
@@ -182,6 +184,7 @@ function App() {
             path="/it-blog/:id"
             element={[<Menubar />, <Blogit />, <Footercard />, <Footerblog/>]}
           />
+          <Route path="/erp-blog/:id" element={[<Menubar />, <Erpblogview/>, <Footercard />, <Footerblog/>]}/>
           <Route
             path="/crm"
             element={[
@@ -212,7 +215,7 @@ function App() {
           <Route path="*" element={<Errorpage />} />
           <Route path="/event" element={[<Webinarbanner/>,<Webinarpart/>,<Webinarcontact/>,<Footercard />,<Webinarfooter/>]}/>
           <Route path="/sales/:userid" element={[<Salesmenu/>,<Salesdatacategory/>]}/>
-          <Route path="/custom-erp-software-solution" element={[<Erpmenubar/>,<Erpbanner/>,<Erprequirements/>,<Verticals/>,<Erppro/>,<Featureserp/>,<Additionalfeatures/>,<Benefitsoferp/>,<Businesserp/>,<Erpcontact/>,<Footercard />,<Erpfooter/>]}/>
+          <Route path="/custom-erp-software-solution" element={[<Erpmenubar/>,<Erpbanner/>,<Erprequirements/>,<Verticals/>,<Erppro/>,<Featureserp/>,<Additionalfeatures/>,<Benefitsoferp/>,<Businesserp/>,<ERPInsights/>,<Erpcontact/>,<Footercard />,<Erpfooter/>]}/>
           <Route path="/erp" element={<RedirectToExternal/>}/>
         </Routes>
       </BrowserRouter>

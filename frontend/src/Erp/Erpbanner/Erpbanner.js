@@ -14,7 +14,7 @@ function Erpbanner() {
         <link rel="canonical" href=" https://www.kggeniuslabs.com/custom-erp-software-solution" />
       </Helmet>
        
-      <div className='container-fluid d-none d-md-block lapbanner h-100 py-4'>
+      <div className='container-fluid d-none d-md-block lapbanner h-100 py-4' id='Geniuserpbanner'>
         <div className='d-flex flex-column justify-content-center align-items-end ps-sm-0 ps-md-3 pe-0 pe-md-5'>
 
           <div className='d-flex flex-column justify-content-end align-items-end pt-2 pb-5'>

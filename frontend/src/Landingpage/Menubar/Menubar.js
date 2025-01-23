@@ -11,10 +11,20 @@ function Menubar() {
   const [expanded, setExpanded] = useState(false); 
   const handleToggle = () => setExpanded(!expanded); 
   const handleSelect = () => setExpanded(false); 
-    const [hrDropdownOpen, setHrDropdownOpen] = useState(false); // State for HR dropdown
-    const toggleHrDropdown = () => setHrDropdownOpen(!hrDropdownOpen); // Toggle HR dropdown
+
+  const [erpDropdownOpen, setErpDropdownOpen] = useState(false); // State for ERP dropdown
+  const toggleErpDropdown = () => setErpDropdownOpen(!erpDropdownOpen); // Toggle ERP dropdown
+
+  // Handle opening the "Our Services" dropdown
+  const handleOurServicesClick = () => {
+    // Close the ERP dropdown if it is open when clicking "Our Services"
+    if (erpDropdownOpen) {
+      setErpDropdownOpen(false);
+    }
+  };
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary " expanded={expanded}>
+    <Navbar expand="lg" className="bg-body-tertiary" expanded={expanded}>
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img src={logo} className="logsiz" title='KG Genius Labs' alt="Logo" />
@@ -25,29 +35,28 @@ function Menubar() {
             <Nav.Link as={Link} to="/" className='navtext px-3' onClick={handleSelect}>Home</Nav.Link>
             <Nav.Link as={Link} to="/aboutus" className='navtext px-3' onClick={handleSelect}>About Us</Nav.Link>
             <NavDropdown
-              title={<span className=" px-3 navtext1">Our Services</span>}
-              id="basic-nav-dropdown">
-              {/* HR Consultancy Dropdown */}
+              title={<span className="px-3 navtext1">Our Services</span>}
+              id="basic-nav-dropdown"
+              onClick={handleOurServicesClick} // Close ERP dropdown when clicking "Our Services"
+            >
+              {/* ERP Services Dropdown */}
               <div
                 className="dropdown-item navtext1"
-                onClick={toggleHrDropdown}
+                onClick={toggleErpDropdown}
                 style={{ cursor: "pointer" }}
               >
                 ERP Services
               </div>
-              {hrDropdownOpen && (
-                <div
-                  className={`dropdown-submenu bg-light rounded-3 ${
-                    expanded ? "d-block d-lg-none" : "d-none d-lg-block"
-                  }`}
-                >
+              {/* Second dropdown for SAP Services and KG Genius ERP */}
+              {erpDropdownOpen && (
+                <div className={`dropdown-submenu bg-light  rounded-3 ${expanded ? "d-block d-lg-none " : "d-none d-lg-block border border-1"}`}>
                   <NavDropdown.Item
                     as={Link}
                     to="/sap-services"
                     className="navtext1"
                     onClick={handleSelect}
                   >
-                   SAP Services
+                    SAP Services
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
@@ -59,12 +68,9 @@ function Menubar() {
                   </NavDropdown.Item>
                 </div>
               )}
-            {/* <NavDropdown title={<span className='px-3 navtext1'>Our Services</span>} id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/sap-services" className='navtext1' onClick={handleSelect}>SAP Services</NavDropdown.Item> */}
-              <NavDropdown.Item as={Link} to="/it-services" className='navtext1' onClick={handleSelect}>IT Services</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/it-services" className='navtext1 px-3' onClick={handleSelect}>IT Services</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/digital-marketing-services" className='navtext1' onClick={handleSelect}>Digital Marketing Services</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/hr-consultancy" className='navtext1' onClick={handleSelect}>HR Consultancy</NavDropdown.Item>
-
             </NavDropdown>
             <Nav.Link as={Link} to="/blog" className='navtext px-3' onClick={handleSelect}>Blog</Nav.Link>
           </Nav>
@@ -76,4 +82,6 @@ function Menubar() {
     </Navbar>
   );
 }
+
 export default Menubar;
+

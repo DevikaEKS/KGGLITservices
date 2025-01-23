@@ -284,10 +284,6 @@ const Autopopup = () => {
                   )}
               </div>
 
-
-
-           
-
             <div className="form-group m-3">
               <input
                 type="email"

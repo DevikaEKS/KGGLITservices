@@ -14,6 +14,15 @@ function Sapmenubar() {
   const handleSelect = () => setExpanded(false); 
 const [hrDropdownOpen, setHrDropdownOpen] = useState(false); // State for HR dropdown
   const toggleHrDropdown = () => setHrDropdownOpen(!hrDropdownOpen); // Toggle HR dropdown
+  
+  // Handle opening the "Our Services" dropdown
+  const handleOurServicesClick = () => {
+    // Close the ERP dropdown if it is open when clicking "Our Services"
+    if (hrDropdownOpen) {
+      setHrDropdownOpen(false);
+    }
+  };
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary" expanded={expanded}>
       <Container>
@@ -28,13 +37,13 @@ const [hrDropdownOpen, setHrDropdownOpen] = useState(false); // State for HR dro
 
             <NavDropdown
               title={<span className=" px-3 navtext1">Our Services</span>}
-              id="basic-nav-dropdown">
+              id="basic-nav-dropdown" onClick={handleOurServicesClick} >
               {/* HR Consultancy Dropdown */}
               <div className="dropdown-item navtext1" onClick={toggleHrDropdown} style={{ cursor: "pointer" }}>ERP Services</div>
               {hrDropdownOpen && (
                 <div
                   className={`dropdown-submenu bg-light rounded-3 ${
-                    expanded ? "d-block d-lg-none" : "d-none d-lg-block"
+                    expanded ? "d-block d-lg-none" : "d-none d-lg-block border border-1"
                   }`}
                 >
                   <NavDropdown.Item as={RouterLink} to="/sap-services" className="navtext1" onClick={handleSelect}>

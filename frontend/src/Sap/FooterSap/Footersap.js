@@ -43,6 +43,8 @@ function Footersap() {
           <h4>
             <b>Services</b>
           </h4>
+          
+          <Link to="/custom-erp-software-solution" className="nav-link"><p>KG Genius ERP</p></Link>
           <Sclink to="sapbanner" className="nav-link">
             <p>SAP Services</p>
           </Sclink>

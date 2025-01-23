@@ -366,7 +366,7 @@ app.get("/relatedBlogs/:category_id/:id", (req, res) => {
            created_at 
     FROM blogs 
     WHERE category_id = ? AND unique_identifier != ? AND publish = 1 
-    ORDER BY created_at DESC
+    ORDER BY created_at DESC LIMIT 2
   `;
 
   db.query(query, [baseUrl, category_id, id], (error, results) => {

@@ -7,7 +7,6 @@ function Blogviewed() {
   const [blogs, setBlogs] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [categoryId, setCategoryId] = useState(null);
-
   useEffect(() => {
     setBlogs([]);
     if (selectedCategory === "All") {
@@ -43,6 +42,9 @@ function Blogviewed() {
       case "DM":
         setCategoryId(3);
         break;
+        case "ERP":
+          setCategoryId(5);
+          break;
       default:
         setCategoryId(null);
         break;
@@ -55,9 +57,15 @@ function Blogviewed() {
       case 1:
         return `/sap-blog/${unique_identifier}`;
       case 2:
+        console.log(category_id)
         return `/it-blog/${unique_identifier}`;
       case 3:
+        console.log(unique_identifier)
         return `/digital-marketing-blog/${unique_identifier}`;
+        case 5:
+          console.log(category_id)
+          console.log(unique_identifier)
+          return `/erp-blog/${unique_identifier}`;
       default:
         return "/";
     }
@@ -78,7 +86,7 @@ function Blogviewed() {
       </h1>
       <div className="row m-4">
         <div className="col d-flex flex-column flex-md-row justify-content-md-evenly border-bottom text-start">
-          {["All", "SAP", "IT", "DM"].map((category) => (
+          {["All", "SAP", "IT", "DM","ERP"].map((category) => (
             <Link
               key={category}
               className={`lnkfnt ${
@@ -108,8 +116,7 @@ function Blogviewed() {
                 <img
                   src={blog.blog_image}
                   alt={blog.title}
-                  className="card-img-top cm1"
-                />
+                  className="card-img-top cm1"/>
                 <div className="card-body">
                   <h5 className="card-title">
                     <b>{blog.title}</b>

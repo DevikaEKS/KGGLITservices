@@ -13,6 +13,14 @@ function Erpmenubar() {
   const handleSelect = () => setExpanded(false); 
   const [hrDropdownOpen, setHrDropdownOpen] = useState(false); // State for HR dropdown
   const toggleHrDropdown = () => setHrDropdownOpen(!hrDropdownOpen); // Toggle HR dropdown
+  
+     // Handle opening the "Our Services" dropdown
+     const handleOurServicesClick = () => {
+      // Close the ERP dropdown if it is open when clicking "Our Services"
+      if (hrDropdownOpen) {
+        setHrDropdownOpen(false);
+      }
+    }
   return (
     <Navbar expand="lg" className="bg-body-tertiary" expanded={expanded}>
       <Container>
@@ -26,7 +34,7 @@ function Erpmenubar() {
             <Nav.Link as={RouterLink} to="/aboutus" className='navtext px-3' onClick={handleSelect}>About Us</Nav.Link>
             <NavDropdown
               title={<span className=" px-3 navtext1">Our Services</span>}
-              id="basic-nav-dropdown">
+              id="basic-nav-dropdown" onClick={handleOurServicesClick}>
               {/* HR Consultancy Dropdown */}
               <div
                 className="dropdown-item navtext1"

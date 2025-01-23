@@ -5,8 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faLinkedin, faSquareXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import { Link as Sclink } from "react-scroll";
-
+import { useNavigate } from "react-router-dom";
 function Footer() {
+   const navigate = useNavigate();
+
+    const handleSelect = (event) => {
+      const value = event.target.value;
+      if (value) {
+        navigate(value); // Navigate to the selected route
+      }
+    };
+  
   useEffect(() => {
     window.scrollTo(0, 0); 
   }, []);
@@ -28,11 +37,16 @@ const year = date.getFullYear();
         </div>
         <div className='col-sm-4 col-lg-3'>
           <h4><b>Services</b></h4>
-          <Link to="/sap-services" className="nav-link"><p>SAP Services</p></Link>
-          <Link to="/it-services" className="nav-link"><p>IT Services</p></Link> 
-          <Link to="/digital-marketing-services" className="nav-link"><p>Digital Marketing Services</p></Link>
-          
-          <Link to="/hr-consultancy" className="nav-link"><p>HR Consultancy</p></Link>
+
+           <Link to="/custom-erp-software-solution" className="nav-link ms-1">
+             <p>KG Genius ERP</p>
+           </Link>
+           <Link to="/sap-services" className="nav-link ms-1">
+             <p>SAP Services</p>
+           </Link>
+          <Link to="/it-services" className="nav-link ms-1"><p>IT Services</p></Link> 
+          <Link to="/digital-marketing-services" className="nav-link ms-1"><p>Digital Marketing Services</p></Link>
+          <Link to="/hr-consultancy" className="nav-link ms-1"><p>HR Consultancy</p></Link>
           <hr className="d-sm-block d-lg-none custom-hr"/>
         </div>
         <div className='col-sm-4 col-lg-2'>

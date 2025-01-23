@@ -4,6 +4,7 @@ import "./Erpfooter.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faLinkedin, faSquareXTwitter,  faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import { Link as Sclink } from "react-scroll";
 function Erpfooter() {
   useEffect(() => {
     window.scrollTo(0, 0); 
@@ -25,6 +26,8 @@ const year = date.getFullYear();
         </div>
         <div className='col-sm-4 col-lg-3'>
           <h4>Services</h4>
+           <Sclink to="Geniuserpbanner" className="nav-link"><p>KG Genius ERP</p></Sclink>
+                    
           <Link to="/sap-services" className="nav-link"><p>SAP Services</p></Link>
           <Link to="/it-services" className="nav-link"><p>IT Services</p></Link>
           <Link to="/digital-marketing-services" className="nav-link"><p> Digital Marketing Services</p></Link>

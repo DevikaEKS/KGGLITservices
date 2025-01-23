@@ -5,8 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faLinkedin, faSquareXTwitter,  faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import { Link as Sclink } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 function Itfooter() {
+  const navigate = useNavigate();
+  const handleSelect = (event) => {
+    const value = event.target.value;
+    if (value) {
+      navigate(value); // Navigate to the selected route
+    }
+  };
   useEffect(() => {
     window.scrollTo(0, 0); 
   }, []);
@@ -27,6 +35,7 @@ const year = date.getFullYear();
         </div>
         <div className='col-sm-4 col-lg-3'>
           <h4>Services</h4>
+          <Link to="/custom-erp-software-solution" className="nav-link"><p>KG Genius ERP</p></Link>
           <Link to="/sap-services" className="nav-link"><p>SAP Services</p></Link>
           <Sclink to="ITbanner" className="nav-link"><p>IT Services</p></Sclink>
           <Link to="/digital-marketing-services" className="nav-link"><p> Digital Marketing Services</p></Link>

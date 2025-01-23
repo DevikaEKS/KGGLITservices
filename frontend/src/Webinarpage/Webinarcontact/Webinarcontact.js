@@ -197,11 +197,8 @@ const [requestType, setRequestType] = useState("");
       // .post("http://192.168.254.144:5000/webinar-form", formValues)
       .then((response) => {
         if (response.data.message === "Form submitted successfully") {
-         
-        
           toast.success("Form submitted successfully");
           resetForm();
-
         } else if (response.data.message === "Database error") {
           toast.error("Value not inserted, try again");
         } else if (response.data.message === "Email already exists") {
@@ -229,8 +226,6 @@ const [requestType, setRequestType] = useState("");
       designation:"",
       state:"",
       city:""
-     
-     
     });
     setSelectedCountryCode("+91");
     setRequestType("");
