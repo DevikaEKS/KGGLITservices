@@ -1,0 +1,59 @@
+.bannerdmbg{
+background-image: url("../../Asset/bannerdm.png");
+background-repeat: no-repeat;
+width: 100vw !important;
+}
+.bannerdmbgmb{
+    background-image: url("../../Asset/mbdm.png");
+    background-repeat: no-repeat;
+    width: 100vw !important;
+}
+
+.dmaboutpart{
+    color: #291571;
+}
+
+.bannerdmhead{
+    font-size: 60px;
+    font-weight: 600;
+    text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.5), /* Top-left shadow */
+    -1px -1px 2px rgba(0, 0, 0, 0.5), /* Bottom-right shadow */
+    inset 1px 1px 2px rgba(0, 0, 0, 0.6); /* Simulated inset shadow */
+}
+.bannerparadm{
+    font-size: 22px;
+    text-shadow: 1px 1px 3px  black;
+}
+.bannerparadm1{
+    font-size: 25px;
+    text-shadow: 1px 1px 3px  black;
+}
+.connectbtn{
+    font-family: 'Proxima Nova', sans-serif !important;
+    color: #291571;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+@media (max-width:768px){
+    .bannerdmhead{
+        font-size: 30px;
+        font-weight: 600;
+        text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.5), /* Top-left shadow */
+        -1px -1px 2px rgba(0, 0, 0, 0.5), /* Bottom-right shadow */
+        inset 1px 1px 2px rgba(0, 0, 0, 0.6); /* Simulated inset shadow */
+    }
+    .bannerparadm{
+        font-size: 16px;
+        text-shadow: 1px 1px 3px  black;
+    } 
+    .connectbtn{
+        font-family: 'Proxima Nova', sans-serif !important;
+        color: #291571;
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+

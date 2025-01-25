@@ -1,0 +1,13 @@
+.numberbox{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #291571;
+}
+.choosehead{
+   
+    font-weight: 600;
+}
+.choosepart{
+    color: #291571;
+}

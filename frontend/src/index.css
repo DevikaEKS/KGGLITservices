@@ -24,7 +24,18 @@ img {
 body.modal-open {
   overflow: hidden;
 }
+.certificatepart{
+  background: linear-gradient(to right,#291571,#09091B);
+}
 
 
+.certificatepart h2{
+  background: linear-gradient(to right,#291571,#09091B);
+  line-height: 3rem;
+  font-size: 40px;
+  font-family: 'Proxima Nova', sans-serif !important;
+}
 
-
+.dmaboutpart p{
+  font-size: 20px;
+}

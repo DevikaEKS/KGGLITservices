@@ -1,0 +1,16 @@
+.performancebg{
+    background-image: url("../../Asset/dmsearch.png");
+    background-repeat: no-repeat;
+}
+.perform{
+    font-size: 32px;
+    line-height: 3rem;
+}
+
+@media (max-width:768px){
+    .perform{
+        font-size: 10px;
+        line-height: 1rem;
+        text-align: justify !important;
+    }   
+}

@@ -87,6 +87,13 @@ import Erpcontact from "./Erp/Erpcontact/Erpcontact";
 import { RedirectToExternal } from "./Landingpage/RedirectToExternal/RedirectToExternal";
 import Erpblogview from "./Erp/Erpblogview/Erpblogview";
 import ERPInsights from "./Erp/ERPInsights/ERPInsights";
+import Dmcertificate from "./DigitalMarketing/DMLandingpage/Dmcertificate/Dmcertificate";
+import Dmabout from "./DigitalMarketing/DMLandingpage/Dmabout/Dmabout";
+import Whydm from "./DigitalMarketing/DMLandingpage/Whydm/Whydm";
+import Bannerdm from "./DigitalMarketing/DMLandingpage/Bannerdm/Bannerdm";
+import Topperformance from "./DigitalMarketing/DMLandingpage/Topperformance/Topperformance";
+import DMLandingcontact from "./DigitalMarketing/DMLandingpage/DMLandingcontact/DMLandingcontact";
+import DMServices from "./DigitalMarketing/DMLandingpage/DMServices/DMServices";
 
 function App() {
   return (
@@ -215,8 +222,21 @@ function App() {
           <Route path="*" element={<Errorpage />} />
           <Route path="/event" element={[<Webinarbanner/>,<Webinarpart/>,<Webinarcontact/>,<Footercard />,<Webinarfooter/>]}/>
           <Route path="/sales/:userid" element={[<Salesmenu/>,<Salesdatacategory/>]}/>
-          <Route path="/custom-erp-software-solution" element={[<Erpmenubar/>,<Erpbanner/>,<Erprequirements/>,<Verticals/>,<Erppro/>,<Featureserp/>,<Additionalfeatures/>,<Benefitsoferp/>,<Businesserp/>,<ERPInsights/>,<Erpcontact/>,<Footercard />,<Erpfooter/>]}/>
+          <Route path="/custom-erp-software-solution" element={[<Erpmenubar/>,<Erpbanner/>,<Erprequirements/>,<Verticals/>,<Erppro/>,<Featureserp/>,<Additionalfeatures/>,<Benefitsoferp/>,<Businesserp/>,<ERPInsights/>,<Erpcontact/>,<Footercard />,<Erpfooter/>,<Autopopup/>]}/>
           <Route path="/erp" element={<RedirectToExternal/>}/>
+          <Route path="/dm" element={[
+              <Menubardm />,
+              <Bannerdm />,
+              <Dmabout/>,
+              <Dmcertificate/>,
+              <DMServices/>,
+              <Topperformance/>,
+              <Whydm/>,
+              <DMLandingcontact/>,
+              <Footercard />,
+              <Footerdm />,
+              <Autopopup />
+            ]}/>
         </Routes>
       </BrowserRouter>
     </div>
