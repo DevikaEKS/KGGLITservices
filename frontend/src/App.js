@@ -94,12 +94,18 @@ import Bannerdm from "./DigitalMarketing/DMLandingpage/Bannerdm/Bannerdm";
 import Topperformance from "./DigitalMarketing/DMLandingpage/Topperformance/Topperformance";
 import DMLandingcontact from "./DigitalMarketing/DMLandingpage/DMLandingcontact/DMLandingcontact";
 import DMServices from "./DigitalMarketing/DMLandingpage/DMServices/DMServices";
+import DMLeads from "./DigitalMarketing/DMLandingpage/DMLeads/DMLeads";
+import DMLFoot from "./DigitalMarketing/DMLandingpage/DMLFoot/DMLFoot";
+import DMLandingMenubar from "./DigitalMarketing/DMLandingpage/DMLandingMenubar/DMLandingMenubar";
+import Buttonarea from "./DigitalMarketing/DMLandingpage/DMServices/Buttonarea";
+
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
+        
           <Route
             path="/"
             element={[
@@ -146,8 +152,7 @@ function App() {
           />
           <Route
             path="/blog"
-            element={[<Menubar />, <Blogviewed />, <Footercard />, <Footerblog/>]}
-          />
+            element={[<Menubar />, <Blogviewed />, <Footercard />, <Footerblog/>]}/>
           <Route
             path="/implementation"
             element={[
@@ -224,19 +229,22 @@ function App() {
           <Route path="/sales/:userid" element={[<Salesmenu/>,<Salesdatacategory/>]}/>
           <Route path="/custom-erp-software-solution" element={[<Erpmenubar/>,<Erpbanner/>,<Erprequirements/>,<Verticals/>,<Erppro/>,<Featureserp/>,<Additionalfeatures/>,<Benefitsoferp/>,<Businesserp/>,<ERPInsights/>,<Erpcontact/>,<Footercard />,<Erpfooter/>,<Autopopup/>]}/>
           <Route path="/erp" element={<RedirectToExternal/>}/>
-          <Route path="/dm" element={[
-              <Menubardm />,
+          <Route path="/digital-marketing-services-coimbatore" element={[
+              <DMLandingMenubar/>,
               <Bannerdm />,
               <Dmabout/>,
               <Dmcertificate/>,
               <DMServices/>,
+              <Buttonarea/>,
               <Topperformance/>,
               <Whydm/>,
+              <Dmblog />,
               <DMLandingcontact/>,
               <Footercard />,
-              <Footerdm />,
-              <Autopopup />
+              <DMLFoot/>,
             ]}/>
+            <Route path="/DigitalMarketing-leadspage/:userid" element={[<DMLeads/>]}/>
+           
         </Routes>
       </BrowserRouter>
     </div>

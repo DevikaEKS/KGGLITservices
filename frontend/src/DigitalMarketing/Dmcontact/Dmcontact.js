@@ -234,7 +234,7 @@ function Dmcontact() {
                     type="tel"
                     id="whatsppnumber"
                     className="form-control"
-                    placeholder="Enter your phone number"
+                    placeholder="Enter your Mobile"
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleChange}
@@ -301,23 +301,6 @@ function Dmcontact() {
                   <small className="text-danger">{errors.email}</small>
                 )}
               </div>
-
-              {/* <div className="form-group m-3">
-                <label className="form-label">Business Email</label>
-                <input
-                  type="email"
-                  id="useremail"
-                  placeholder="Business email"
-                  className="form-control form-control1"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-                {errors.email && (
-                  <small className="text-danger">{errors.email}</small>
-                )}
-              </div> */}
 
               <div className="form-group m-3">
                 <label className="form-label">Company Name</label>

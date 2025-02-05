@@ -45,7 +45,7 @@ const year = date.getFullYear();
              <p>SAP Services</p>
            </Link>
           <Link to="/it-services" className="nav-link ms-1"><p>IT Services</p></Link> 
-          <Link to="/digital-marketing-services" className="nav-link ms-1"><p>Digital Marketing Services</p></Link>
+          <Link to="/digital-marketing-services-coimbatore" className="nav-link ms-1"><p>Digital Marketing Services</p></Link>
           <Link to="/hr-consultancy" className="nav-link ms-1"><p>HR Consultancy</p></Link>
           <hr className="d-sm-block d-lg-none custom-hr"/>
         </div>

@@ -53,7 +53,7 @@ function Footerblog() {
           <Link to="/it-services" className="nav-link">
             <p>IT Services</p>
           </Link>
-          <Link to="/digital-marketing-services" className="nav-link">
+          <Link to="/digital-marketing-services-coimbatore" className="nav-link">
             <p>Digital Marketing Services</p>
           </Link>
           <Link to="/hr-consultancy" className="nav-link">

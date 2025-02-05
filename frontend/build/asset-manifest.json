@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1b0456f6.css",
-    "main.js": "/static/js/main.5f9fa1cb.js",
+    "main.css": "/static/css/main.fb99e62a.css",
+    "main.js": "/static/js/main.31af0947.js",
     "static/js/453.c6b2d817.chunk.js": "/static/js/453.c6b2d817.chunk.js",
     "static/media/working-with-blueprint.jpg": "/static/media/working-with-blueprint.64ee90685d64d5ff885b.jpg",
     "static/media/successful-medical-team.jpg": "/static/media/successful-medical-team.069c2a753e904724a006.jpg",
@@ -12,11 +12,14 @@
     "static/media/Sectors.png": "/static/media/Sectors.8a2fa00a45cd207cc68c.png",
     "static/media/bannerpart.png": "/static/media/bannerpart.f68f2ea2f8bc7cbfa090.png",
     "static/media/Background.png": "/static/media/Background.9c47922f7a265d959344.png",
+    "static/media/bannerdm.png": "/static/media/bannerdm.025d7d89a243175e6a0f.png",
+    "static/media/dmsearch.png": "/static/media/dmsearch.a32dbe105d9639d1f4b0.png",
     "static/media/Our Evolution.jpg": "/static/media/Our Evolution.02e5d36fbbef574de987.jpg",
     "static/media/bannerreq.png": "/static/media/bannerreq.b4576fa4585cd5b8caad.png",
     "static/media/clientgirl.png": "/static/media/clientgirl.1e795568d1c1ea9ea5ea.png",
     "static/media/Banner.jpg": "/static/media/Banner.a0c61cb1bee73976b148.jpg",
     "static/media/bannerim2.png": "/static/media/bannerim2.09bb65e98a93ddc2ed06.png",
+    "static/media/DigitalLogo.png": "/static/media/DigitalLogo.7f959a60c07d79695198.png",
     "static/media/9804423.jpg": "/static/media/9804423.27c00780b7ac5151d637.jpg",
     "static/media/supportsap.png": "/static/media/supportsap.e6d826631c37a13a2ce9.png",
     "static/media/imcrm.png": "/static/media/imcrm.2bb3a14e40e1b31a26a5.png",
@@ -25,11 +28,13 @@
     "static/media/320 phone.png": "/static/media/320 phone.c69b901504a5e9637399.png",
     "static/media/ser1.png": "/static/media/ser1.876d8415fcb206cacaf3.png",
     "static/media/Genius ERP White LOGO.png": "/static/media/Genius ERP White LOGO.00b045d229434e18177f.png",
+    "static/media/mbdm.png": "/static/media/mbdm.555889533387cbb18815.png",
     "static/media/keytakeaways.png": "/static/media/keytakeaways.6225fbbc193ac603c673.png",
     "static/media/generaldmpart.png": "/static/media/generaldmpart.9b7901379a52fca5f422.png",
     "static/media/Logo Tagline-02 (1).png": "/static/media/Logo Tagline-02 (1).1ebc88d9e080a12d9c64.png",
     "static/media/KrishnaMam.png": "/static/media/KrishnaMam.9e39c326c1e70bcd24c4.png",
     "static/media/sapimp.png": "/static/media/sapimp.21696ea49ca5fe01b471.png",
+    "static/media/dmland.png": "/static/media/dmland.654241a4ebe6393d5ab7.png",
     "static/media/ser4.png": "/static/media/ser4.0956a730f5954ca6b4ad.png",
     "static/media/groupphoto.png": "/static/media/groupphoto.aa86c34bfceecbf9f1ab.png",
     "static/media/resilientlap.png": "/static/media/resilientlap.f2b841333b3e5846635d.png",
@@ -94,12 +99,12 @@
     "static/media/SAP-SuccessFactors-Logo 1.png": "/static/media/SAP-SuccessFactors-Logo 1.d7417a897149388f26ae.png",
     "static/media/rubyimage.png": "/static/media/rubyimage.c002d02bdb350ef07359.png",
     "index.html": "/index.html",
-    "main.1b0456f6.css.map": "/static/css/main.1b0456f6.css.map",
-    "main.5f9fa1cb.js.map": "/static/js/main.5f9fa1cb.js.map",
+    "main.fb99e62a.css.map": "/static/css/main.fb99e62a.css.map",
+    "main.31af0947.js.map": "/static/js/main.31af0947.js.map",
     "453.c6b2d817.chunk.js.map": "/static/js/453.c6b2d817.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b0456f6.css",
-    "static/js/main.5f9fa1cb.js"
+    "static/css/main.fb99e62a.css",
+    "static/js/main.31af0947.js"
   ]
 }

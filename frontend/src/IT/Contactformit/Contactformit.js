@@ -242,39 +242,7 @@ function Contactformit() {
                   <small className="text-danger">{errors.username}</small>
                 )}
               </div>
-              {/* <div className="form-group m-3">
-                <label className="form-label">WhatsApp Number</label>
-                <div className="input-group form-control1 rounded-2">
-                  <select
-                    className="form-select"
-                    value={selectedCountryCode}
-                    onChange={(e) => setSelectedCountryCode(e.target.value)}
-                    style={{ width: "30%" }}
-                  >
-                    {countryCodes.map((country, index) => (
-                      <option key={index} value={country.code}>
-                        {country.name} ({country.code})
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    type="tel"
-                    id="mobilenumber"
-                    className="form-control"
-                    placeholder="Enter your whatsapp number"
-                    name="whatsappnumber"
-                    value={formData.whatsappnumber}
-                    onChange={handleChange}
-                    style={{ width: "70%" }}
-                    required
-                    pattern="[0-9]*"
-                    maxLength="15"
-                  />
-                </div>
-                {errors.whatsappnumber && (
-                  <small className="text-danger">{errors.whatsappnumber}</small>
-                )}
-              </div> */}
+              
 
               <div className="form-group m-3">
                 <label className="form-label">Mobile Number</label>
@@ -353,8 +321,7 @@ function Contactformit() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
-                />
+                  required/>
                 {errors.email && (
                   <small className="text-danger">{errors.email}</small>
                 )}

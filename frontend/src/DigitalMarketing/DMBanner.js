@@ -16,7 +16,6 @@ function DMBanner() {
 with our data-driven
 Digital Marketing Intuition</h1>
 <p className='dmpara'>Consistent outcomes, innovative Strategies</p>
-
         </div>
     </div>
     </>

@@ -4,14 +4,15 @@ import { ToastContainer, toast } from "react-toastify";
 import { Country, State, City } from "country-state-city";
 import "react-toastify/dist/ReactToastify.css";
 import "./DMLandingcontent.css";
+import { useNavigate } from "react-router-dom";
+
 function DMLandingcontact() {
   const [countryCodes, setCountryCodes] = useState([]);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
-  const [selectedState, setSelectedState] = useState("");
-  const [selectedCity, setSelectedCity] = useState("");
-  const [states, setStates] = useState([]);
-  const [cities, setCities] = useState([]);
 
+  const [otherService, setOtherService] = useState("");
+  const[utmdata,setUtmdata]=useState({});
+const nav=useNavigate()
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -39,27 +40,14 @@ function DMLandingcontact() {
         setCountryCodes(codes);
       })
       .catch((error) => console.error("Error fetching country codes:", error));
+      const queryParam = new URLSearchParams(window.location.search);
+      const utm_source = queryParam.get('utm_source');
+      const utm_medium = queryParam.get('utm_medium');
+      const utm_campaign = queryParam.get('utm_campaign');
+      setUtmdata({utm_source,utm_medium,utm_campaign});
   }, []);
 
 
- // Fetch states for a specific country code (e.g., "IN" for India)
- useEffect(() => {
-    const countryCode = "IN"; // Set default country code
-    const statesOfCountry = State.getStatesOfCountry(countryCode);
-    setStates(statesOfCountry);
-  }, []);
-
-  // Handle State Change
-  const handleStateChange = (e) => {
-    const stateCode = e.target.value;
-    setSelectedState(stateCode);
-    setCities(City.getCitiesOfState("IN", stateCode)); // Fetch cities for the selected state
-    setSelectedCity("");
-  };
-
-  const handleCityChange = (e) => {
-    setSelectedCity(e.target.value);
-  };
 
   const validateEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -76,9 +64,9 @@ function DMLandingcontact() {
  
   const validateForm = () => {
     const newErrors = {};
-    if (!requestType) {
-      newErrors.requestType = "Please select a request type."; // Ensure this is set
-    }
+    // if (!requestType) {
+    //   newErrors.requestType = "Please select a request type."; // Ensure this is set
+    // }
     if (!formData.email || !validateEmail(formData.email)) {
       newErrors.email = "Invalid email address.";
     }
@@ -129,27 +117,33 @@ function DMLandingcontact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     if (!validateForm()) return;
-
+    
     const fullmobile_number = `${selectedCountryCode}${formData.mobile_number}`;
-    // const fullwhatsappnumber = `${selectedCountryCode}${formData.whatsappnumber}`;
     const formValues = {
       username: formData.username,
+      mobile_number: fullmobile_number,
       email: formData.email,
-      phno: fullmobile_number,
       company_name: formData.company_name,
       message: formData.message,
-      request_type_id: requestType,
+      utm_source: utmdata.utm_source,
+      utm_medium: utmdata.utm_medium,
+      utm_campaign: utmdata.utm_campaign
     };
-
-    console.log(formValues);
-
+    
+    // Console log all data
+    console.log("Form Values:", formValues);
+    console.log("Selected Country Code:", selectedCountryCode);
+    console.log("Other Service:", otherService);
+    console.log("UTM Data:", utmdata);
+    
     setLoading(true);
+    
     axios
-      .post("http://localhost:5000/dm-contact", formValues)
+      .post("https://www.kggeniuslabs.com:5000/dm-contact", formValues)
       .then((response) => {
-        if (response.data.message === "Form submitted successfully") {
+        if (response.data.message === "Form submitted and email sent successfully") {
           toast.success("Form submitted successfully");
           resetForm();
         } else if (response.data.message === "Database error") {
@@ -166,6 +160,7 @@ function DMLandingcontact() {
         setLoading(false);
       });
   };
+  
 
   const resetForm = () => {
     setFormData({
@@ -182,17 +177,6 @@ function DMLandingcontact() {
   };
 
 
-// Handle Country Change
-const handleCountryChange = (e) => {
-    const countryCode = e.target.value;
-   
-    setStates(State.getStatesOfCountry(countryCode)); // Fetch states based on country
-    setSelectedState("");
-    setCities([]);
-  };
-
-
-  
 
 
 
@@ -202,23 +186,24 @@ const handleCountryChange = (e) => {
       <div className="container">
         <div className="row my-5 py-4">
           <div className="col-sm-12 col-md-6 d-flex align-items-center justify-content-center">
-            <div className="textcontact text-light mx-5">
-              <h1 className="sapcontacthead my-sm-4 my-lg-0 py-2">Know Your Digital Presence</h1>
+            <div className="textcontact text-light mx-0 ">
+              <h1 className="dmlandingcontacthead my-sm-4 my-lg-0 py-2">Know Your <br/> Digital Presence</h1>
               <p className="dmcontentpara1">
                 <b>Get a Free Website Audit – Submit Your Request Today!</b>
               </p>
-              <p>
+              <p className="paradml">
               We specialize in SEO, social media marketing, Google Ads campaigns, and custom digital marketing strategies for B2B growth.
               </p>
             </div>
           </div>
           <div className="col-sm-12 col-md-6">
-            <form
+        
+          <form
               onSubmit={handleSubmit}
               className="bg-light p-3 rounded-3 mx-sm-0 mx-lg-5"
             >
               <h4 className="contactheadertext mx-3">
-                Request a meeting with our experts
+                Book a meeting with our experts
               </h4>
               <div className="form-group m-3">
                 <label className="form-label">Name</label>
@@ -253,32 +238,31 @@ const handleCountryChange = (e) => {
                     ))}
                   </select>
                   <input
-                    type="tel"
-                    id="whatsppnumber"
-                    className="form-control"
-                    placeholder="Enter your phone number"
-                    name="mobile_number"
-                    value={formData.mobile_number}
-                    onChange={handleChange}
-                    style={{ width: "70%" }}
-                    required
-                    pattern="[0-9]*"
-                    maxLength="15"
-                  />
+  type="tel"
+  id="whatsppnumber"
+  className="form-control"
+  placeholder="Enter your Mobile"
+  name="mobile_number"  
+  value={formData.mobile_number}
+  onChange={handleChange}
+  style={{ width: "70%" }}
+  required
+  pattern="[0-9]*"
+  maxLength="15"
+/>
+
                 </div>
                 {errors.mobile_number && (
                   <small className="text-danger">{errors.mobile_number}</small>
                 )}
               </div>
 
-             
-
               <div className="form-group m-3">
-                <label className="form-label">Email Id</label>
+                <label className="form-label">Email</label>
                 <input
                   type="email"
                   id="useremail"
-                  placeholder="Business email"
+                  placeholder="Enter your Email"
                   className="form-control form-control1"
                   name="email"
                   value={formData.email}
@@ -292,69 +276,46 @@ const handleCountryChange = (e) => {
 
 
               <div className="form-group m-3">
-                <label className="form-label">Company Name</label>
-                <input
-                  type="text"
-                  className="form-control form-control1"
-                  name="company_name"
-                  value={formData.company_name}
-                  onChange={handleChange}
-                  placeholder="Enter your company name"
-                  required
-                />
-                {errors.company_name && (
-                  <p className="text-danger">{errors.company_name}</p>
-                )}
-              </div>
-
-              <div>
-   
-
-    {/* State Dropdown */}
-    <div className="form-group m-3">
-      <label>Select State</label>
-      <select className="form-control form-control1" value={selectedState} onChange={handleStateChange} disabled={!states.length}>
-        <option value="">Select a State</option>
-        {states.map((state) => (
-          <option key={state.isoCode} value={state.isoCode}>
-            {state.name}
-          </option>
-        ))}
-      </select>
-    </div>
-
-    {/* City Dropdown */}
-    <div className="form-group m-3">
-      <label>Select City</label>
-      <select className="form-control form-control1" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} disabled={!cities.length}>
-        <option value="">Select a City</option>
-        {cities.map((city) => (
-          <option key={city.name} value={city.name}>
-            {city.name}
-          </option>
-        ))}
-      </select>
-    </div>
-  </div>
+  <label className="form-label">Choose Our Services</label>
+  <br />
+  <select
+    className="form-control1 py-2 rounded-2 px-1"
+    style={{ width: "100%" }}
+    onChange={(e) => {
+      setRequestType(e.target.value);
+      if (e.target.value === "Other") {
+        setOtherService(""); // Reset input when "Other" is selected
+      }
+    }}
+    required
+  >
+    <option>Choose Our Services</option>
+    <option value="SEO">SEO</option>
+    <option value="PPC">PPC</option>
+    <option value="Social Media Marketing">Social Media Marketing</option>
+    <option value="Complete Digital Marketing">Complete Digital Marketing</option>
+    <option value="Other">Other(Mention Below)</option>
+  </select>
+  
+</div>
 
               <div className="form-group m-3">
-                <label className="form-label">Message</label>
+                <label className="form-label">Enter your Specific Requirement</label>
                 <textarea
                   className="form-control form-control1"
-                  name="message"
+                  name="description"
                   rows="3"
-                  value={formData.message}
+                  value={formData.description}
                   onChange={handleChange}
                 ></textarea>
               </div>
-
+           <p className="text-center txtclr">We will get back to you within 24 hours.</p>
               <div className="d-flex justify-content-center m-3">
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  disabled={loading}
-                >
-                  {loading ? "Submitting..." : "Submit"}
+                  disabled={loading}>
+                  {loading ? "Submitting..." : "Book a Free Consultation"}
                 </button>
               </div>
               <p className="mx-4 prvctxt">
@@ -364,6 +325,8 @@ const handleCountryChange = (e) => {
                 <span style={{ color: "red" }}>Privacy Policy</span>
               </p>
             </form>
+             
+             
           </div>
         </div>
       </div>
@@ -372,6 +335,3 @@ const handleCountryChange = (e) => {
 }
 
 export default DMLandingcontact;
-
-
-

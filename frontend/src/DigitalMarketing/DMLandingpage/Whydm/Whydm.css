@@ -1,8 +1,9 @@
 .numberbox{
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     border-radius: 50%;
     background-color: #291571;
+    box-shadow: 1px 1px 1px 1px rgb(202, 200, 200);
 }
 .choosehead{
    

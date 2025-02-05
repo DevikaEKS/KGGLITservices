@@ -4,11 +4,11 @@ import "./Dmblog.css";
 import axios from "axios";
 
 function Dmblog() {
-  const [blogs, setBlogs] = useState([]); // State to hold the fetched blog data
+  const [blogs, setBlogs] = useState([]);
   const navigate = useNavigate();
 
   const handleReadMoreClick = (id) => {
-    navigate(`/digital-marketing-blog/${id}`); // Navigate to the blog details page with the blog id
+    navigate(`/digital-marketing-blog/${id}`); 
   };
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Dmblog() {
       .get(`https://www.kggeniuslabs.com:5000/blogs/category/3`)
       .then((res) => {
         console.log(res.data);
-        setBlogs(res.data); // Store the fetched data in state
+        setBlogs(res.data); 
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -31,7 +31,7 @@ function Dmblog() {
           <div key={blog.id} className="col-sm-12 col-lg-4">
             <div className="card colourcard text-light my-3">
               <img
-                src={blog.blog_image} // Use the full blog image URL from the API
+                src={blog.blog_image} 
                 title={blog.title}
                 alt={blog.title}
                 className="card-img-top"

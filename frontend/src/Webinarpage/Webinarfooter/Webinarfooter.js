@@ -17,7 +17,7 @@ function Webinarfooter() {
           <h4>Services</h4>
           <Link to="/sap-services" className="nav-link"><p>SAP Services</p></Link>
           <Link to="/it-services" className="nav-link"><p>IT Services</p></Link>
-          <Link to="/digital-marketing-services" className="nav-link"><p> Digital Marketing Services</p></Link>
+          <Link to="/digital-marketing-services-coimbatore" className="nav-link"><p> Digital Marketing Services</p></Link>
           <Link to="/hr-consultancy" className="nav-link"><p>HR Consultancy</p></Link>
           <hr className="d-sm-block d-lg-none custom-hr" />
         </div>

@@ -16,7 +16,6 @@ const Autopopup = () => {
     username: "",
     email: "",
     phoneNumber: "",
-    // whatsappnumber: "",
     companyName: "",
     companyWebsite: "",
     description: "",

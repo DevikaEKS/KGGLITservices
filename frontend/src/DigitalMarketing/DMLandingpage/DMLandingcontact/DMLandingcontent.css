@@ -1,4 +1,49 @@
 .dmcontentpara1{
     color: #FFDB2C;
     font-size: 30px;
+    font-weight: 400;
+}
+.dmlandingcontacthead{
+    font-size: 68px;
+}
+.txtclr{
+    color: #291571;
+}
+.paradml{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.contactdmbtn{
+    background: linear-gradient(to right,#291571,#4E28D7);
+    color: #fff;
+    border: 0px;
+}
+
+
+@media (max-width:768px){
+    .dmcontentpara1{
+        color: #FFDB2C;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .dmlandingcontacthead{
+        font-size: 24px;
+    }
+    
+    .paradml{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+}
+
+
+
+@media (min-width:769px) and (max-width:1200px){
+    .dmlandingcontacthead{
+        font-size: 60px;
+    }
+       
+    
 }

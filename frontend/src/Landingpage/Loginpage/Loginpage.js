@@ -9,7 +9,6 @@ function Loginpage() {
   const [passwordError, setPasswordError] = useState("");
   const [loginError, setLoginError] = useState("");
   const navigate = useNavigate();
-
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -17,9 +16,7 @@ function Loginpage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     console.log(email, password);
-
     let isValid = true;
     setEmailError("");
     setPasswordError("");
@@ -43,7 +40,6 @@ function Loginpage() {
 
     if (isValid) {
       axios
-        // .post("https://www.kggeniuslabs.com:5000/login", { email, password })
         .post("https://www.kggeniuslabs.com:5000/login", { email, password })
         .then((response) => {
           console.log(response);
@@ -54,20 +50,18 @@ function Loginpage() {
             console.log("id",role_id)
             if(role_id===1){
               navigate(`/blogeditor/${btoa(userid)}`, {
-                // state: {
-                //   isAuthenticated: true,
-                //   title: "Blog Title",
-                //   category: "Category",
-                //   content: "Blog content",
-                //   conclusion: "Blog conclusion",
-                //   image: "image-url",
-                // },
               });
             }
             else if(role_id===2){
               navigate(`/sales/${userid}`)
             }
+            else if(role_id===3){
+              navigate(`/DigitalMarketing-leadspage/${userid}`)
+            }
             console.log(userid);
+
+
+
 
             // navigate(`/blogeditor/${btoa(userid)}`, {
             //   // state: {
@@ -79,6 +73,10 @@ function Loginpage() {
             //   //   image: "image-url",
             //   // },
             // });
+
+
+
+
           } else if (response.data.message === "Invalid email or password") {
             alert("Invalid email or password");
           } else if (

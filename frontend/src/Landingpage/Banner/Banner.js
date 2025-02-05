@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import bannerimg1 from "../Asset/GLBanner.jpg";
 import bannerimg2 from "../Asset/SAPBanner.jpg";
@@ -11,6 +11,9 @@ import { Link } from 'react-router-dom';
 import { Link as Sclink } from "react-scroll";
 import { Helmet } from 'react-helmet';
 function Banner() {
+  useEffect(()=>{
+    window.scroll(0,0)
+  })
   return (
     <>
     
@@ -66,7 +69,7 @@ function Banner() {
           <h3 className='dmheading pb-2'>Revamp Your Online Presence with Our Strategic
             <span className='bannerkg1' > Digital Marketing Magic</span></h3>
           <p className='itpara'>We offer innovative digital marketing services to enhance your brand and drive results.</p>
-          <Link to="/digital-marketing-services" className='pt-5 mt-5'>
+          <Link to="/digital-marketing-services-coimbatore" className='pt-5 mt-5'>
           <button className='btnshading1 mb-5'>Explore More <FontAwesomeIcon icon={faAngleRight} style={{color:"fff"}} className='mx-1'/></button>
           </Link>
         </Carousel.Caption>

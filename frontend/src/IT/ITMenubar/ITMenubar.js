@@ -67,7 +67,7 @@ function ITMenubar() {
                 </div>
               )}
               <NavDropdown.Item as={RouterLink} to="/it-services" className='navtext1 px-3' onClick={handleSelect}>IT Services</NavDropdown.Item>
-              <NavDropdown.Item as={RouterLink} to="/digital-marketing-services" className='navtext1' onClick={handleSelect}>Digital Marketing Services</NavDropdown.Item>
+              <NavDropdown.Item as={RouterLink} to="/digital-marketing-services-coimbatore" className='navtext1' onClick={handleSelect}>Digital Marketing Services</NavDropdown.Item>
               <NavDropdown.Item as={RouterLink} to="/hr-consultancy" className='navtext1' onClick={handleSelect}>HR Consultancy</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={RouterLink} to="/blog" className='navtext px-3' onClick={handleSelect}>Blog</Nav.Link>

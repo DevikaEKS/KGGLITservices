@@ -26,6 +26,7 @@ body.modal-open {
 }
 .certificatepart{
   background: linear-gradient(to right,#291571,#09091B);
+  text-align: center;
 }
 
 
@@ -37,5 +38,44 @@ body.modal-open {
 }
 
 .dmaboutpart p{
+  font-size: 20px;
+}
+
+
+.dmserveimg{
+  max-height: 600px;
+}
+
+.certtext{
+  font-weight: 300;
+ 
+}
+.paraaboutdm{
+  text-align: justify !important;
+}
+@media (max-width:768px){
+  .certificatepart{
+    background: linear-gradient(to right,#291571,#09091B);
+    text-align: justify;
+  }
+  .certificatepart h2{
+    background: linear-gradient(to right,#291571,#09091B);
+    line-height: 2rem;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Proxima Nova', sans-serif !important;
+  }
+  
+.dmserveimg{
+  max-height: 400px;
+}
+  
+}
+
+.expertAdvice{
+ box-shadow: 3px 3px 4px rgb(160, 160, 225); 
+}
+.txtclr1{
+  color: #291571;
   font-size: 20px;
 }

@@ -69,7 +69,7 @@ function Menubar() {
                 </div>
               )}
               <NavDropdown.Item as={Link} to="/it-services" className='navtext1 px-3' onClick={handleSelect}>IT Services</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/digital-marketing-services" className='navtext1' onClick={handleSelect}>Digital Marketing Services</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/digital-marketing-services-coimbatore" className='navtext1' onClick={handleSelect}>Digital Marketing Services</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/hr-consultancy" className='navtext1' onClick={handleSelect}>HR Consultancy</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/blog" className='navtext px-3' onClick={handleSelect}>Blog</Nav.Link>

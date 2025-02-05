@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link as RouterLink } from 'react-router-dom'; // Renamed to avoid conflict with react-scroll's Link
-import { Link as ScrollLink } from "react-scroll"; // For scrolling
+import { Link as ScrollLink } from "react-scroll"; 
 import logo from "../../Asset/Logo Tagline-02 (1).png";
 import "./Menubardm.css";
 
