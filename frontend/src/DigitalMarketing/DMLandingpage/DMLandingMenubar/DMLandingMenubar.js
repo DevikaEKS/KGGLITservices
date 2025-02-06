@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from "react-scroll";
 import logo from "../../Asset/DigitalLogo.png";
 
 
@@ -67,13 +68,22 @@ function DMLandingMenubar() {
                 </div>
               )}
               <NavDropdown.Item as={Link} to="/it-services" className='navtext1 px-3' onClick={handleSelect}>IT Services</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/digital-marketing-services" className='navtext1' onClick={handleSelect}>Digital Marketing Services</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/digital-marketing-services-coimbatore" className='navtext1' onClick={handleSelect}>Digital Marketing Services</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/hr-consultancy" className='navtext1' onClick={handleSelect}>HR Consultancy</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/blog" className='navtext px-3' onClick={handleSelect}>Blog</Nav.Link>
           </Nav>
           <Nav className='ms-auto'>
-            <Nav.Link as={Link} to="/contact" className='contactbutton px-3 rounded-1' onClick={handleSelect}>Contact Us</Nav.Link>
+            {/* <Nav.Link as={Link} to="" className='contactbutton px-3 rounded-1' onClick={handleSelect}>Contact Us</Nav.Link> */}
+             <ScrollLink
+                          to="dmlcontact"  // ID of the contact section
+                          smooth={true}
+                          duration={500}
+                          className='contactbutton px-3 py-2 rounded-1 text-decoration-none'
+                          onClick={() => setExpanded(false)} 
+                        >
+                          Contact Us
+                        </ScrollLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

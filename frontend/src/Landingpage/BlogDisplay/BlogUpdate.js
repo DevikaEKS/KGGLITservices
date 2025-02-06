@@ -37,8 +37,7 @@ function BlogUpdate() {
           <select 
             value={updatedCategory} 
             onChange={(e) => setUpdatedCategory(e.target.value)} 
-            style={{ width: '100%', fontSize: '20px', marginBottom: '20px' }}
-          >
+            style={{ width: '100%', fontSize: '20px', marginBottom: '20px' }}>
             <option value="SAP">SAP</option>
             <option value="IT">IT Services</option>
             <option value="DM">Digital Marketing</option>
@@ -69,7 +68,6 @@ function BlogUpdate() {
             style={{ width: '100%', height: '100px', fontSize: '16px', marginBottom: '20px' }} 
             placeholder="Enter conclusion here..."
           />
-
           <button className="btn btn-success mt-3" onClick={handleSave}>Save</button>
         </div>
       </div>

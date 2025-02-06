@@ -545,8 +545,8 @@ app.get("/request-types", (req, res) => {
   });
 });
 
-/*                                       Blog                                        */
 
+/*                                       Blog                                        */
 // Route to fetch all categories
 app.get("/blog_categories", (req, res) => {
   const query = "SELECT id, category_name FROM blog_categories";
@@ -1088,6 +1088,103 @@ app.get("/dm-contact/:id", (req, res) => {
     res.json(result[0]);
   });
 });
+
+
+
+
+
+app.post("/dm-contact", (req, res) => {
+  const { username, mobile_number, email, services, message } = req.body;
+
+  if (!username || !mobile_number || !email || !services || !message) {
+    return res.status(400).json({ message: "All fields are required" });
+  }
+
+  const query = `
+    INSERT INTO dm_contact (username, mobile_number, email, services, message) 
+    VALUES (?, ?, ?, ?, ?)
+  `;
+
+  db.query(query, [username, mobile_number, email, services, message], (err, result) => {
+    if (err) {
+      console.error(" Error inserting data:", err);
+      return res.status(500).json({ message: "Database error" });
+    }
+
+    // Send Email to the User
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: "Thank you for contacting us",
+      text: `Hello ${username},\n\nThank you for reaching out! We will contact you soon.\n\nBest Regards,\nYour Company Name`,
+    };
+
+    transporter.sendMail(mailOptions, (error) => {
+      if (error) {
+        console.error("Error sending email:", error);
+        return res.status(500).json({ message: "Error sending email" });
+      }
+
+      console.log("Email sent successfully!");
+      return res.status(201).json({ message: "Form submitted and email sent successfully" });
+    });
+  });
+});
+
+//  API Endpoint to Get All Contact Submissions
+app.get("/dm-contact", (req, res) => {
+  const query = "SELECT * FROM dm_contact";
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Error fetching data:", err);
+      return res.status(500).json({ message: "Database error" });
+    }
+    res.status(200).json(results);
+  });
+});
+
+// API Endpoint to Get Contact Submission by ID
+app.get("/dm-contact/:id", (req, res) => {
+  const { id } = req.params;
+  const query = "SELECT * FROM dm_contact WHERE id = ?";
+
+  db.query(query, [id], (err, result) => {
+    if (err) {
+      console.error("Error fetching data:", err);
+      return res.status(500).json({ message: "Database error" });
+    }
+    if (result.length === 0) {
+      return res.status(404).json({ message: "No record found with this ID" });
+    }
+    res.status(200).json(result[0]);
+  });
+});
+
+// Handle 404 Errors (Invalid Routes)
+app.use((req, res) => {
+  res.status(404).json({ message: "API route not found" });
+});
+
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

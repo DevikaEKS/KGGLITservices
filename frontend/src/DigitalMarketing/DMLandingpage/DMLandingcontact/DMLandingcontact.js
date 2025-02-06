@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { Country, State, City } from "country-state-city";
 import "react-toastify/dist/ReactToastify.css";
 import "./DMLandingcontent.css";
 import { useNavigate } from "react-router-dom";
@@ -15,9 +14,9 @@ function DMLandingcontact() {
 const nav=useNavigate()
   const [formData, setFormData] = useState({
     username: "",
-    email: "",
     mobile_number: "",
-    company_name: "",
+    email: "",
+    services:"",
     message: "",
   });
   const [errors, setErrors] = useState({});
@@ -46,8 +45,6 @@ const nav=useNavigate()
       const utm_campaign = queryParam.get('utm_campaign');
       setUtmdata({utm_source,utm_medium,utm_campaign});
   }, []);
-
-
 
   const validateEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -115,31 +112,33 @@ const nav=useNavigate()
    
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
     if (!validateForm()) return;
-    
+  
     const fullmobile_number = `${selectedCountryCode}${formData.mobile_number}`;
+    
     const formValues = {
       username: formData.username,
-      mobile_number: fullmobile_number,
+      mobile_number: fullmobile_number, 
       email: formData.email,
-      company_name: formData.company_name,
-      message: formData.message,
+      message: formData.message, 
       utm_source: utmdata.utm_source,
       utm_medium: utmdata.utm_medium,
-      utm_campaign: utmdata.utm_campaign
+      utm_campaign: utmdata.utm_campaign,
+      services: formData.services
     };
-    
-    // Console log all data
-    console.log("Form Values:", formValues);
+    console.log("Username:", formValues.username);
+    console.log("Mobile Number:", formValues.mobile_number);
+    console.log("Email:", formValues.email);
+    console.log("Message:", formValues.message);
+    console.log("Services:", formValues.services);
     console.log("Selected Country Code:", selectedCountryCode);
-    console.log("Other Service:", otherService);
     console.log("UTM Data:", utmdata);
-    
+  
     setLoading(true);
-    
     axios
       .post("https://www.kggeniuslabs.com:5000/dm-contact", formValues)
       .then((response) => {
@@ -161,14 +160,13 @@ const nav=useNavigate()
       });
   };
   
-
+  
   const resetForm = () => {
     setFormData({
       username: "",
       email: "",
       mobile_number: "",
-      company_name: "",
-      companyWebsite: "",
+      services:"",
       message: "",
     });
     setSelectedCountryCode("+91");
@@ -176,12 +174,8 @@ const nav=useNavigate()
     setErrors({});
   };
 
-
-
-
-
   return (
-    <div className="container-fluid frmcontacts" id="dmcontact">
+    <div className="container-fluid frmcontacts" id="dmlcontact">
       <ToastContainer />
       <div className="container">
         <div className="row my-5 py-4">
@@ -274,28 +268,27 @@ const nav=useNavigate()
                 )}
               </div>
 
-
               <div className="form-group m-3">
   <label className="form-label">Choose Our Services</label>
   <br />
   <select
-    className="form-control1 py-2 rounded-2 px-1"
-    style={{ width: "100%" }}
-    onChange={(e) => {
-      setRequestType(e.target.value);
-      if (e.target.value === "Other") {
-        setOtherService(""); // Reset input when "Other" is selected
-      }
-    }}
-    required
-  >
-    <option>Choose Our Services</option>
-    <option value="SEO">SEO</option>
-    <option value="PPC">PPC</option>
-    <option value="Social Media Marketing">Social Media Marketing</option>
-    <option value="Complete Digital Marketing">Complete Digital Marketing</option>
-    <option value="Other">Other(Mention Below)</option>
-  </select>
+  className="form-control1 py-2 rounded-2 px-1"
+  style={{ width: "100%" }}
+  name="services"
+  value={formData.services}
+  onChange={(e) => {
+    setFormData({ ...formData, services: e.target.value });
+    console.log("Selected Service:", e.target.value);
+  }}
+  required
+>
+  <option value="">Choose Our Services</option>
+  <option value="SEO">SEO</option>
+  <option value="PPC">PPC</option>
+  <option value="Social Media Marketing">Social Media Marketing</option>
+  <option value="Complete Digital Marketing">Complete Digital Marketing</option>
+  <option value="Other">Other(Mention Below)</option>
+</select>
   
 </div>
 
@@ -303,9 +296,9 @@ const nav=useNavigate()
                 <label className="form-label">Enter your Specific Requirement</label>
                 <textarea
                   className="form-control form-control1"
-                  name="description"
+                  name="message"
                   rows="3"
-                  value={formData.description}
+                  value={formData.message}
                   onChange={handleChange}
                 ></textarea>
               </div>

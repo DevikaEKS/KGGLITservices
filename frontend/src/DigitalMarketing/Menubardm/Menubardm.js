@@ -78,7 +78,7 @@ function Menubardm() {
           <Nav className='ms-auto'>
            
             <ScrollLink
-              to="dmcontact"  // ID of the contact section
+              to="dmlcontact"  // ID of the contact section
               smooth={true}
               duration={500}
               className='contactbutton px-3 py-2 rounded-1 text-decoration-none'
