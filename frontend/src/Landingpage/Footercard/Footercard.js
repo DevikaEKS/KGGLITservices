@@ -19,12 +19,12 @@ function Footercard() {
           </div>
    
           <div className='col-12 col-md-4 d-flex flex-column align-items-center mb-3'>
-            <a href="tel:9363466093">
+            <a href="tel:9363466094">
               <FontAwesomeIcon icon={faPhone} className="hoverani mb-2" />
             </a>
             <div>
               <h5 className='contactmain'>Contact Us</h5>
-              <p className='contactpara'>+91-9363466093</p>
+              <p className='contactpara'>+91-9363466094</p>
             </div>
           </div>
 

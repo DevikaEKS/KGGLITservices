@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import "./AboutKggl.css";
 import { Helmet } from 'react-helmet';

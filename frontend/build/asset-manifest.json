@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.063e60db.css",
-    "main.js": "/static/js/main.e3154748.js",
+    "main.js": "/static/js/main.ec6bebdd.js",
     "static/js/453.c6b2d817.chunk.js": "/static/js/453.c6b2d817.chunk.js",
     "static/media/working-with-blueprint.jpg": "/static/media/working-with-blueprint.64ee90685d64d5ff885b.jpg",
     "static/media/successful-medical-team.jpg": "/static/media/successful-medical-team.069c2a753e904724a006.jpg",
@@ -100,11 +100,11 @@
     "static/media/rubyimage.png": "/static/media/rubyimage.c002d02bdb350ef07359.png",
     "index.html": "/index.html",
     "main.063e60db.css.map": "/static/css/main.063e60db.css.map",
-    "main.e3154748.js.map": "/static/js/main.e3154748.js.map",
+    "main.ec6bebdd.js.map": "/static/js/main.ec6bebdd.js.map",
     "453.c6b2d817.chunk.js.map": "/static/js/453.c6b2d817.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.063e60db.css",
-    "static/js/main.e3154748.js"
+    "static/js/main.ec6bebdd.js"
   ]
 }
