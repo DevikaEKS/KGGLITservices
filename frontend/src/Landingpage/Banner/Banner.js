@@ -18,7 +18,7 @@ function Banner() {
     <>
     
     <Helmet>
-        <title>KG Genius Labs - SAP Consulting, IT & Digital Transformation, Digital Marketing.</title>
+        <title>KG Genius Labs | ERP, IT & Digital Marketing Services</title>
         <meta name="description" content="Discover KG Genius Labs for expert SAP consultation, innovative IT solutions, CRM development, digital marketing strategies, and custom LMS development. Your trusted partner for transforming ideas into innovation and growth." />
         <meta name="keywords" content=" kggeniuslabs, KG Genius Labs, SAP Consulting in coimbatore, IT Services in coimbatore, SAP Consulting, IT Solutions, Digital Transformation, CRM Development, Digital Marketing, Custom LMS Development, Best SAP consulting services, SEO Service in coimbatore, Website Development " />
         <link rel="canonical" href="https://www.kggeniuslabs.com" />

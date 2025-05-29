@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import BlogUpdate from "../BlogDisplay/BlogUpdate";
 import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import ClientForm from "../../ClientSection/ClientForm";
 
 function Blogviewed() {
   const [blogs, setBlogs] = useState([]);
@@ -51,6 +52,9 @@ function Blogviewed() {
         case "ERP":
           setCategoryId(5);
           break;
+           case "Clients":
+          setCategoryId(6);
+          break;
       default:
         setCategoryId(null);
         break;
@@ -75,6 +79,8 @@ function Blogviewed() {
         return `/digital-marketing-blog/${blogId}`;
         case 5:
         return `/erp-blog/${blogId}`;
+        case 6:
+          return `/client`;
       default:
         return "/";
     }
@@ -119,13 +125,13 @@ function Blogviewed() {
 
   return (
     <div className="container-fluid">
-      <h1 className="text-center headblog mb-5 text-center">
+      <h1 className="text-center evolheading heading mb-5 text-center">
         <b>Additional Insights</b>
       </h1>
 
       <div className="row m-4">
         <div className="col d-flex flex-column flex-md-row justify-content-md-evenly border-bottom text-start">
-          {["All", "SAP", "IT", "DM","ERP"].map((category) => (
+          {["All", "SAP", "IT", "DM","ERP","Clients"].map((category) => (
             <Link
               key={category}
               className={`lnkfnt ${
@@ -203,7 +209,12 @@ function Blogviewed() {
             </div>
           </div>
         ))}
+        
       </div>
+      {selectedCategory === "Clients" && (
+        <ClientForm/>
+      )}
+
     </div>
   );
 }

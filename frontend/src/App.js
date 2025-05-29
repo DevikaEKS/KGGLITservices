@@ -57,7 +57,6 @@ import ITMenubar from "./IT/ITMenubar/ITMenubar";
 import Dynamicblog from "./Landingpage/Dynamicblog/Dynamicblog";
 import Errorpage from "./Landingpage/Errorpage/Errorpage";
 import Loginpage from "./Landingpage/Loginpage/Loginpage";
-// import BlogDisplay from "./Landingpage/BlogDisplay/BlogDisplay";
 import BlogUpdate from "./Landingpage/BlogDisplay/BlogUpdate";
 import EditorBlog from "./Landingpage/Editorblog/Editorblog";
 import Blogupdation from "./Landingpage/Blogupdation/Blogupdation";
@@ -98,6 +97,7 @@ import DMLeads from "./DigitalMarketing/DMLandingpage/DMLeads/DMLeads";
 import DMLFoot from "./DigitalMarketing/DMLandingpage/DMLFoot/DMLFoot";
 import DMLandingMenubar from "./DigitalMarketing/DMLandingpage/DMLandingMenubar/DMLandingMenubar";
 import Buttonarea from "./DigitalMarketing/DMLandingpage/DMServices/Buttonarea";
+import ClientSection from "./ClientSection/ClientSection";
 
 
 function App() {
@@ -105,7 +105,6 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-        
           <Route
             path="/"
             element={[
@@ -115,6 +114,7 @@ function App() {
               <Ourservices />,
               <Credentials />,
               <Newsletter/>,
+              <ClientSection/>,
               <Insights />,
               <Contactpages />,
               <Footercard />,
@@ -244,7 +244,8 @@ function App() {
               <DMLFoot/>,
             ]}/>
             <Route path="/DigitalMarketing-leadspage/:userid" element={[<DMLeads/>]}/>
-           
+          
+            
         </Routes>
       </BrowserRouter>
     </div>

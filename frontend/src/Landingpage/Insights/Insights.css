@@ -29,7 +29,10 @@
 @media (max-width:768px){
     .insightspart{
         margin: 0px;
-    }   
+    } 
+    .evolheading{
+        font-size: 35px;
+    }  
 }
 
 

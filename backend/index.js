@@ -34,7 +34,7 @@ const db = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
-  waitForConnection:true,
+  waitForConnections : true
 });
 
 db.getConnection((err,connection) => {
@@ -85,6 +85,7 @@ const upload = multer({
 });
 
 // app.post("/webinar-form", (req, res) => {
+
 //   const {
 //     username,
 //     email,
@@ -244,6 +245,7 @@ const upload = multer({
 //     }
 //   );
 // });
+
 async function createLead(state, event) {
   const leadData = {
       name: event.text,  // assuming the user's name is in event.text
@@ -1161,6 +1163,147 @@ app.get("/dm-contact/:id", (req, res) => {
   });
 });
 
+
+app.post("/add-client", upload.single("logo"), (req, res) => {
+  const { company_name } = req.body;
+  const logo = req.file;
+
+  if (!company_name || !logo) {
+    return res.status(400).json({ message: "Company name and logo are required." });
+  }
+
+  const logoPath = `/uploads/${logo.filename}`;
+
+  const query = `
+    INSERT INTO clients (company_name, logo)
+    VALUES (?, ?)
+  `;
+
+  db.query(query, [company_name, logoPath], (err, result) => {
+    if (err) {
+      console.error("Error inserting client data:", err);
+      return res.status(500).json({ message: "Database error" });
+    }
+
+    res.json({ message: "Client added successfully", data: { company_name, logoPath } });
+  });
+});
+
+
+app.post(
+  "/add-testimonial",
+  upload.fields([
+    { name: "image", maxCount: 1 },
+    { name: "company_logo", maxCount: 1 },
+    { name: "video", maxCount: 1 },
+  ]),
+  (req, res) => {
+    const { company_name, full_name, role, content } = req.body;
+    const files = req.files;
+
+    const imagePath = files?.image?.[0]?.filename
+      ? `/uploads/${files.image[0].filename}`
+      : null;
+    const logoPath = files?.company_logo?.[0]?.filename
+      ? `/uploads/${files.company_logo[0].filename}`
+      : null;
+    const videoPath = files?.video?.[0]?.filename
+      ? `/uploads/${files.video[0].filename}`
+      : null;
+
+    const hasOtherFields =
+      company_name?.trim() ||
+      full_name?.trim() ||
+      role?.trim() ||
+      content?.trim() ||
+      imagePath ||
+      logoPath;
+
+    // Validation: video and other fields cannot coexist
+    if (videoPath && hasOtherFields) {
+      return res
+        .status(400)
+        .json({ message: "Cannot upload video if other fields are provided." });
+    }
+
+    if (!videoPath && !hasOtherFields) {
+      return res
+        .status(400)
+        .json({ message: "Please provide at least one field (video or other details)." });
+    }
+
+    const query = `
+      INSERT INTO testimonials 
+      (company_name, image, company_logo, full_name, role, video, content, created_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, NOW())
+    `;
+
+    const values = [
+      company_name || null,
+      imagePath,
+      logoPath,
+      full_name || null,
+      role || null,
+      videoPath,
+      content || null,
+    ];
+
+    db.query(query, values, (err, result) => {
+      if (err) {
+        console.error("Error inserting testimonial:", err);
+        return res.status(500).json({ message: "Database error" });
+      }
+
+      res.status(200).json({
+        message: "Testimonial added successfully",
+        data: {
+          company_name,
+          full_name,
+          role,
+          imagePath,
+          logoPath,
+          videoPath,
+          content,
+        },
+      });
+    });
+  }
+);
+
+
+app.get("/get-testimonial", (req, res) => {
+  const query = "SELECT * FROM testimonials ORDER BY created_at DESC";
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Error fetching testimonials:", err);
+      return res.status(500).json({ message: "Database error" });
+    }
+
+    res.status(200).json({
+      message: "Testimonials fetched successfully",
+      data: results,
+    });
+  });
+});
+
+app.get("/get-client",(req,res) =>{
+  const query = "SELECT * FROM clients ORDER BY created_at DESC";
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Error fetching testimonials:", err);
+      return res.status(500).json({ message: "Database error" });
+    }
+
+    res.status(200).json({
+      message: "Clients fetched successfully",
+      data: results,
+    });
+  });
+})
+
+
 // Handle 404 Errors (Invalid Routes)
 app.use((req, res) => {
   res.status(404).json({ message: "API route not found" });
@@ -1168,44 +1311,10 @@ app.use((req, res) => {
 
 // Start Server
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.listen(process.env.PORT, () => {
-  console.log(`server is listening on port ${process.env.PORT}`);
-});
-
-
-
-
-
-
-
-
-
-app.listen(process.env.PORT, () => {
-  console.log(`server is listening on port ${process.env.PORT}`);
-});
 

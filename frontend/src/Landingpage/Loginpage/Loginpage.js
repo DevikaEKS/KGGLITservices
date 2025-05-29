@@ -40,7 +40,7 @@ function Loginpage() {
 
     if (isValid) {
       axios
-        .post("https://www.kggeniuslabs.com:5000/login", { email, password })
+        .post("https://kggeniuslabs.com:5000/login", { email, password })
         .then((response) => {
           console.log(response);
 
@@ -49,7 +49,7 @@ function Loginpage() {
             const role_id = response.data.user.role_id;
             console.log("id",role_id)
             if(role_id===1){
-              navigate(`/blogeditor/${btoa(userid)}`, {
+              navigate(`https://kggeniuslabs.com:5000/blogeditor/${btoa(userid)}`, {
               });
             }
             else if(role_id===2){

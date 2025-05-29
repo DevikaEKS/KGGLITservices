@@ -6,7 +6,7 @@ function Bannerhr() {
   return (
     <>
     <Helmet>
-        <title>Transformative HR Consultancy | Talent & Workforce Solutions</title>
+        <title>Expert HR Consultancy | Talent & Workforce Solutions</title>
         <meta name="description" content=" KG Genius Labs offers personalized HR consultancy to fuel organizational growth. We specialize in workforce strategy, talent acquisition, and career development to create thriving teams and drive success." />
         <meta name="keywords" content="HR Consultancy, Human Resource Consultancy, HR Consultancy Coimbatore." />
         <link rel="canonical" href="https://www.kggeniuslabs.com/hr-consultancy" />

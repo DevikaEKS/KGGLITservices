@@ -37,8 +37,7 @@ function Sapbanner() {
   return (
     <>
     <Helmet>
-        <title>Expert SAP Services by KG Genius Labs | SAP S/4HANA & ERP Solutions
-</title>
+        <title>Expert SAP Services & ERP Consulting | KG Genius Labs</title>
         <meta name="description" content="Transform your business with KG Genius Labs' SAP consultancy services. Specializing in SAP S/4HANA implementation, migration, and private cloud solutions. Contact us today." />
         <meta name="keywords" content="SAP Services, SAP S/4HANA, Customized ERP Solutions, SAP Consultancy, SAP Implementation, SAP Migration, Private Cloud Solutions, Best SAP S/4HANA migration services, Custom SAP S/4HANA solutions for businesses in Coimbatore
 " />

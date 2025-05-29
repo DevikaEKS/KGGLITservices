@@ -1,0 +1,71 @@
+.techstack-container {
+  padding: 40px 0;
+  text-align: center;
+}
+
+
+
+
+
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  margin: 30px 0;
+}
+
+.scroll-container-top {
+  height: 100px;
+}
+
+.scroll-container-bottom {
+  height: 100px;
+}
+
+.scroll-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
+
+.scroll-content1 {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-right 20s linear infinite;
+}
+
+.tech-logo {
+  width: 150px;
+  margin: 0 15px;
+  vertical-align: middle;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.clientheading {
+    text-align: center;
+    font-size: 48px; 
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 700;
+  }
+ @media  (max-width:768px){
+  .clientheading {
+    font-size: 35px; 
+  }
+ }

@@ -375,12 +375,7 @@ function Discover() {
                   {loading ? "Submitting..." : "Submit"}
                 </button>
               </div>
-              <p className="mx-4 prvctxt">
-                The information you provide in this form will be used to process
-                your request and keep you informed about our services, in line
-                with KG Genius Lab's{" "}
-                <span style={{ color: "red" }}>Privacy Policy</span>
-              </p>
+              
             </form>
           </div>
         </div>

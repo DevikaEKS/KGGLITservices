@@ -144,7 +144,7 @@ function Contactpage() {
 
     setLoading(true);
     axios
-      .post("https://www.kggeniuslabs.com:5000/submit-form", formValues)
+      .post("https://kggeniuslabs.com:5000/submit-form", formValues)
       .then((response) => {
         console.log(response);
 
@@ -410,12 +410,7 @@ function Contactpage() {
                   {loading ? "Submitting..." : "Submit"}
                 </button>
               </div>
-              <p className="mx-4 prvctxt">
-                The information you provide in this form will be used to process
-                your request and keep you informed about our services, in line
-                with KG Genius Lab's{" "}
-                <span style={{ color: "red" }}>Privacy Policy</span>
-              </p>
+              
             </form>
           </div>
         </div>

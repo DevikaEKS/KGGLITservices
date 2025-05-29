@@ -5,7 +5,11 @@ function DMBanner() {
   return (
     <>
     <Helmet>
-        <title> Strategic Digital Marketing Consultancy | KG Genius Labs</title> <meta name="description" content="Elevate your online presence with KG Genius Labs' digital marketing consultancy. Tailored strategies, data-driven campaigns, and measurable results to grow your brand." />
+        <title>Digital Marketing Services in Coimbatore | SEO, SEM, & SMM</title> 
+        <meta name="description" content="Achieve your business goals with expert digital marketing services in
+Coimbatore. We specialize in SEO, SMM, and Ads to drive targeted traffic, enhance
+visibility, and grow your brand effectively.
+" />
  <meta name="keywords" content="Digital Marketing Services, Best SEO Company in Coimbatore, Digital Marketing Company in Coimbatore, Top Best Digital Marketing company in India, Best Digital Marketing Services" />
 <link rel="canonical" href="https://www.kggeniuslabs.com/digital-marketing-services" />
       </Helmet>

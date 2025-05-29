@@ -14,7 +14,7 @@ function Aboutus() {
 KGiSL, a pioneer in South India 25 years ago, is now a fast-growing IT company,
 spanning 7 countries across the Indo-Pacific. </p>
             <p className='abouttext'>KG Genius Labs, the latest venture, offers customized solutions globally.
-Our expertise includes SAP, LMS, CRM, IT Services,
+Our expertise includes ERP, LMS, CRM, IT Services,
 Bespoke Application Development, and Digital Marketing. We are the preferred
 partner for forward-thinking business collaborations.</p>
             <div className='knowmore text-end '><Link to="/aboutus">Know More</Link></div>

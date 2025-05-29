@@ -51,7 +51,7 @@ function BannerIT() {
   return (
     <>
     <Helmet>
-        <title>Future-Ready IT Solutions | Innovate with KG Genius Labs</title>
+        <title>Future-Ready IT Services | Innovate with KG Genius Labs</title>
         <meta name="description" content="Redefine your business with KG Genius Labs' cutting-edge IT services. From tailored software development to seamless CRM solutions and transformative IT consulting, we craft technology that works for you." />
         <meta name="keywords" content="Customized Software Development, CRM Solutions, IT Consulting, IT Services , Future-ready IT solutions for businesses in Coimbatore, Customized CRM, Best IT Services Provider, Custom IT Solutions for Businesses, IT Support and Maintenance Services, CRM Company in Coimbatore, Custom CRM Solutions Provider, Cloud-Based CRM Services, B2B LMS Platforms for Educational Institutions, LMS for Skill Development and Training" />
         <link rel="canonical" href=" https://www.kggeniuslabs.com/it-services" />
