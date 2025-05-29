@@ -82,7 +82,7 @@ const year = date.getFullYear();
           <a href="https://www.instagram.com/kggeniuslabs/"><FontAwesomeIcon icon={faInstagram} className="text-white mx-2"></FontAwesomeIcon></a>
           <a href="https://www.linkedin.com/company/kg-geniuslabs/"><FontAwesomeIcon icon={faLinkedin} className="text-white mx-2"></FontAwesomeIcon></a>
           <a href='https://x.com/KGGeniusLabs'><FontAwesomeIcon icon={faSquareXTwitter} className="text-white mx-2"></FontAwesomeIcon></a>
-          <a href='https://www.youtube.com/@kgislgeniuslabs'><FontAwesomeIcon icon={faYoutube} className="text-white mx-2"/></a>
+          <a href='https://www.youtube.com/@KGGeniusLabs/videos'><FontAwesomeIcon icon={faYoutube} className="text-white mx-2"/></a>
           </div>
           </div>
         </div>

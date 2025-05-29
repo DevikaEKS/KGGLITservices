@@ -141,7 +141,7 @@ function Footerblog() {
                   className="text-white mx-2"
                 ></FontAwesomeIcon>
               </a>
-              <a href="https://www.youtube.com/@kgislgeniuslabs">
+              <a href="https://www.youtube.com/@KGGeniusLabs/videos">
                 <FontAwesomeIcon icon={faYoutube} className="text-white mx-2" />
               </a>
             </div>

@@ -20,18 +20,10 @@ function Mission() {
           </div>
           <img src={visionim} className='section-image ms-0 ms-md-4 mt-3 mt-md-0 rounded-4 d-none d-md-block' title='KG Genius Labs Vision' alt="To empower businesses with cutting-edge infrastructure solutions, SAP expertise, and impactful digital marketing strategies, driving innovation, efficiency, and growth" />
         </div>
-
-
         <div className='col-12 col-lg-6 d-flex flex-column flex-md-row align-items-center'>
-   
           <img src={missionim} className='section-image me-0 me-md-4 mb-5 pb-5 mb-md-0 d-none d-md-block' title='Our Vision' alt="At KG Genius Labs, our vision is to be a leading provider of diverse services, SAP solutions, and digital marketing, empowering businesses to achieve their full potential through innovative technology and strategic digital growth." />
         <img src={mvim} className='mvimg d-block d-md-none' title='KG Genius Labs Vision' alt='Our Vision'/>
           <div className='vision-content text-center text-md-start'>
-
-
-
-
-            
             <div className='heading-with-icon '>
               <h3 className='credhead text-center'>Vision</h3>
             </div>

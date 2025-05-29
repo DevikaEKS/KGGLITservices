@@ -22,9 +22,7 @@ const year = date.getFullYear();
         <Link to="/blog" className="nav-link"><p>Blog</p></Link>
         <Link to="/contact" className="nav-link"><p>Contact Us</p></Link>
         <hr className="d-sm-block d-lg-none custom-hr" />
-      </div>
-     
-      
+      </div>    
  <div className="col-sm-4 col-lg-3">
   <h4><b>Services</b></h4>
   <Link to="/custom-erp-software-solution" className="nav-link ms-1">
@@ -44,7 +42,6 @@ const year = date.getFullYear();
   </Link>
   <hr className="d-sm-block d-lg-none custom-hr ms-1" />
 </div> 
-
     <div className='col-sm-4 col-lg-2'>
 <h4><b>Our Branches</b></h4>
 <p>
@@ -61,7 +58,7 @@ const year = date.getFullYear();
   </a>
 </p>
 </div>
-      <div className='col-sm-4 col-lg-2'>
+<div className='col-sm-4 col-lg-2'>
 <p>
   <a
     href='https://www.google.com/maps?q=Ideaspace+Business+Center,+Millennium+Executive+Tower,+Sheikh+Zayed+Road,+Dubai,+United+Arab+Emirates'
@@ -87,7 +84,7 @@ const year = date.getFullYear();
         <a href="https://www.instagram.com/kggeniuslabs/"><FontAwesomeIcon icon={faInstagram} className="text-white mx-2"></FontAwesomeIcon></a>
         <a href="https://www.linkedin.com/company/kg-geniuslabs/"><FontAwesomeIcon icon={faLinkedin} className="text-white mx-2"></FontAwesomeIcon></a>
         <a href='https://x.com/KGGeniusLabs'><FontAwesomeIcon icon={faSquareXTwitter} className="text-white mx-2"></FontAwesomeIcon></a>
-        <a href='https://www.youtube.com/@kgislgeniuslabs'><FontAwesomeIcon icon={faYoutube} className="text-white mx-2"/></a>
+        <a href='https://www.youtube.com/@KGGeniusLabs/videos'><FontAwesomeIcon icon={faYoutube} className="text-white mx-2"/></a>
         </div>
         </div>
       </div>

@@ -36,8 +36,9 @@
 }
 
 .tech-logo {
+  height: 80px;
   width: 150px;
-  margin: 0 15px;
+  margin: 0 30px;
   vertical-align: middle;
 }
 
@@ -68,4 +69,10 @@
   .clientheading {
     font-size: 35px; 
   }
+  .tech-logo {
+  height: 80px;
+  width: 150px;
+  margin: 0 10px;
+  vertical-align: middle;
+}
  }

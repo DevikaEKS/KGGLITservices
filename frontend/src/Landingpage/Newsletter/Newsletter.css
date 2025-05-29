@@ -95,13 +95,11 @@
 .right-arrow {
   right: 10px;
 }
-
-
-
 /* Responsive Adjustments */
 @media (max-width: 426px) {
   .clienttext {
     font-size: 30px;
+    text-align: center;
   }
 
   .testimonialheader {
